@@ -1,0 +1,1162 @@
+{
+	"info": {
+		"_postman_id": "9a65937f-f4b7-456e-9a97-9bae20967835",
+		"name": "MS-BANK",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15766545",
+		"_collection_link": "https://restless-rocket-158458.postman.co/workspace/Abyster~58627cf8-8f78-4a30-b973-7ad1ddc6ffcc/collection/15766545-9a65937f-f4b7-456e-9a97-9bae20967835?action=share&creator=15766545&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Currency",
+			"item": [
+				{
+					"name": "savecurrency",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"pm.test(\"Response has a data property\", () => {",
+									"    var jsonData = pm.response.json()",
+									"    pm.expect(jsonData.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_bank}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_bank}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\":\"EUR\",\n    \"intitule\":\"EURO\",\n    \"userId\":\"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_bank}}/api/savecurrency",
+							"host": [
+								"{{base_bank}}"
+							],
+							"path": [
+								"api",
+								"savecurrency"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modifycurrency",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"pm.test(\"Response has a data property\", () => {",
+									"    pm.expect(pm.response.json.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_bank}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token_bank}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\":\"USD\",\n    \"intitule\":\"DOLLARS AMERICAINS\",\n    \"userId\":1,\"id\":1005\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_bank}}/api/modifycurrency",
+							"host": [
+								"{{base_bank}}"
+							],
+							"path": [
+								"api",
+								"modifycurrency"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "multiplecurrency",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", () => {",
+									"    pm.response.to.have.status(200);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_bank}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token_bank}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{base_bank}}/api/multiplecurrency/",
+							"host": [
+								"{{base_bank}}"
+							],
+							"path": [
+								"api",
+								"multiplecurrency",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "siglecurrency",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", () => {",
+									"    pm.response.to.have.status(200);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_bank}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{token_bank}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{base_bank}}/api/siglecurrency/USD",
+							"host": [
+								"{{base_bank}}"
+							],
+							"path": [
+								"api",
+								"siglecurrency",
+								"USD"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "siglecurrency_on_ligne",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", () => {",
+									"    pm.response.to.have.status(200);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUeGVBNFRWUE04QjNFNEptM0JQM2tSalM3UjBOQUpKRmx4NUNoam5SOV9nIn0.eyJleHAiOjE2ODU2NTM1ODcsImlhdCI6MTY4NTYxMDM4NywianRpIjoiMzNiZTVhY2QtN2Y1Ni00Yjk5LTk5NDYtZTU4NTVkNzI2NWMyIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5hcHBzLmFieXN0ZXIuY29tL2F1dGgvcmVhbG1zL0RHSSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJhM2Q1OGMxNi0xMzU0LTQxYTktOTA3Yi03ODhhZTQ4YTQ3OTUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJCQUNLRU5ELURHSSIsInNlc3Npb25fc3RhdGUiOiJmMzI0MTE3Ny1iNzU4LTQ1OGYtOTFjYy00NzQyNjc4MzM1NzQiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtbXMtZGdpIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6ImYzMjQxMTc3LWI3NTgtNDU4Zi05MWNjLTQ3NDI2NzgzMzU3NCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYXBpLWNvbXB0ZWJhbmNhaXJlIn0.jiHctvwld5bzPiX5X3HqGhs_J63JrQcASz0Z03KX9D14JuaNRmXJ5mEwlCwwe_1IKd8vjZZwHL7cXlRRn5BFW8_NbNxqwsVkO8HJF8l-IzKCkRDhcNQN5J-KP2lyjYEKNMf8Soo8thEj5BGxGMwcROXYJ4c6hw3P8fRxdtDWro7hasRla5-7k1m663wB8V5rg3QAkIp_KywK-QbgW6SzhxESOXenLFFlDTOih_yoElI-9dGM6zXrMM3Xr8jN57RnCS4lpPz8rr4kF7zcfwiAGdou-ozzIB3-sQ3V--B6dxqpoT17g78XkROQCIbvX9O3BLU_XdVaDRizUVSt6l1i_g",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{base_bank}}/api/multiplecurrency/",
+							"host": [
+								"{{base_bank}}"
+							],
+							"path": [
+								"api",
+								"multiplecurrency",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bank",
+			"item": [
+				{
+					"name": "savebank",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									"pm.test(\"Response has a data property\", () => {",
+									"    var jsonData = pm.response.json()",
+									"    pm.expect(jsonData.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUeGVBNFRWUE04QjNFNEptM0JQM2tSalM3UjBOQUpKRmx4NUNoam5SOV9nIn0.eyJleHAiOjE2ODU2Njk4ODUsImlhdCI6MTY4NTYyNjY4NSwianRpIjoiZTQ3N2FjNDAtMDJmZi00NGJmLThlOGItZjVjODE1OWQwZGY4IiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5hcHBzLmFieXN0ZXIuY29tL2F1dGgvcmVhbG1zL0RHSSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJhM2Q1OGMxNi0xMzU0LTQxYTktOTA3Yi03ODhhZTQ4YTQ3OTUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJCQUNLRU5ELURHSSIsInNlc3Npb25fc3RhdGUiOiI5MmY0MjU0Mi01OGUwLTQ4MjctYTk4Yi0zYmQ4NGFkZjUzMTAiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtbXMtZGdpIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6IjkyZjQyNTQyLTU4ZTAtNDgyNy1hOThiLTNiZDg0YWRmNTMxMCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYXBpLWNvbXB0ZWJhbmNhaXJlIn0.PhyUJMq54LF_4WKpxEfifjTah-0QngAi2e_0gbkcCd8Z0kwX8OyCvXPYRKoz8xU3uA6RILn9iOvAO9J85EfR_vUU-1neQlj8APiNNIc7K4oJ2qcFpcri_khQsUJPD98SShrlvgZ_jMquPQTCrbkxorQvHoabpniwWaQt-oVAziaDNghMGzaGp_9nl7LDdIstnvDI8_LZQRzj-XOLBDoXLyk8eBf3ooSLmzl0g0JjdIpjfods7QvukJQMH70dgJPiIa7f1MNox0_Z16IgDBne2OJBHjKUK5kakPltZzErZHKbWXWd8t95AEXCeo7_A_eaUvaUEEtIAMah9TlLFazb-w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUeGVBNFRWUE04QjNFNEptM0JQM2tSalM3UjBOQUpKRmx4NUNoam5SOV9nIn0.eyJleHAiOjE2ODU2Njk4ODUsImlhdCI6MTY4NTYyNjY4NSwianRpIjoiZTQ3N2FjNDAtMDJmZi00NGJmLThlOGItZjVjODE1OWQwZGY4IiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5hcHBzLmFieXN0ZXIuY29tL2F1dGgvcmVhbG1zL0RHSSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJhM2Q1OGMxNi0xMzU0LTQxYTktOTA3Yi03ODhhZTQ4YTQ3OTUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJCQUNLRU5ELURHSSIsInNlc3Npb25fc3RhdGUiOiI5MmY0MjU0Mi01OGUwLTQ4MjctYTk4Yi0zYmQ4NGFkZjUzMTAiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtbXMtZGdpIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6IjkyZjQyNTQyLTU4ZTAtNDgyNy1hOThiLTNiZDg0YWRmNTMxMCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYXBpLWNvbXB0ZWJhbmNhaXJlIn0.PhyUJMq54LF_4WKpxEfifjTah-0QngAi2e_0gbkcCd8Z0kwX8OyCvXPYRKoz8xU3uA6RILn9iOvAO9J85EfR_vUU-1neQlj8APiNNIc7K4oJ2qcFpcri_khQsUJPD98SShrlvgZ_jMquPQTCrbkxorQvHoabpniwWaQt-oVAziaDNghMGzaGp_9nl7LDdIstnvDI8_LZQRzj-XOLBDoXLyk8eBf3ooSLmzl0g0JjdIpjfods7QvukJQMH70dgJPiIa7f1MNox0_Z16IgDBne2OJBHjKUK5kakPltZzErZHKbWXWd8t95AEXCeo7_A_eaUvaUEEtIAMah9TlLFazb-w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\":\"TMB\",\n    \"intitule\":\"TMB\",\n    \"userid\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_bank}}/api/savebank",
+							"host": [
+								"{{base_bank}}"
+							],
+							"path": [
+								"api",
+								"savebank"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "savebank_on_line",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"pm.test(\"Response has a data property\", () => {",
+									"    var jsonData = pm.response.json()",
+									"    pm.expect(jsonData.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_bank}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUeGVBNFRWUE04QjNFNEptM0JQM2tSalM3UjBOQUpKRmx4NUNoam5SOV9nIn0.eyJleHAiOjE2ODU2NTM1ODcsImlhdCI6MTY4NTYxMDM4NywianRpIjoiMzNiZTVhY2QtN2Y1Ni00Yjk5LTk5NDYtZTU4NTVkNzI2NWMyIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5hcHBzLmFieXN0ZXIuY29tL2F1dGgvcmVhbG1zL0RHSSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJhM2Q1OGMxNi0xMzU0LTQxYTktOTA3Yi03ODhhZTQ4YTQ3OTUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJCQUNLRU5ELURHSSIsInNlc3Npb25fc3RhdGUiOiJmMzI0MTE3Ny1iNzU4LTQ1OGYtOTFjYy00NzQyNjc4MzM1NzQiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtbXMtZGdpIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6ImYzMjQxMTc3LWI3NTgtNDU4Zi05MWNjLTQ3NDI2NzgzMzU3NCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYXBpLWNvbXB0ZWJhbmNhaXJlIn0.jiHctvwld5bzPiX5X3HqGhs_J63JrQcASz0Z03KX9D14JuaNRmXJ5mEwlCwwe_1IKd8vjZZwHL7cXlRRn5BFW8_NbNxqwsVkO8HJF8l-IzKCkRDhcNQN5J-KP2lyjYEKNMf8Soo8thEj5BGxGMwcROXYJ4c6hw3P8fRxdtDWro7hasRla5-7k1m663wB8V5rg3QAkIp_KywK-QbgW6SzhxESOXenLFFlDTOih_yoElI-9dGM6zXrMM3Xr8jN57RnCS4lpPz8rr4kF7zcfwiAGdou-ozzIB3-sQ3V--B6dxqpoT17g78XkROQCIbvX9O3BLU_XdVaDRizUVSt6l1i_g",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\":\"RAWBANK\",\n    \"intitule\":\"TRAWBANK\",\n    \"userid\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-comptebancaire-dev.apps.kubedev.hologram.cd/micro-service-bank/api/savebank",
+							"protocol": "https",
+							"host": [
+								"api-comptebancaire-dev",
+								"apps",
+								"kubedev",
+								"hologram",
+								"cd"
+							],
+							"path": [
+								"micro-service-bank",
+								"api",
+								"savebank"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modifybank",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"pm.test(\"Response has a data property\", () => {",
+									"    var jsonData = pm.response.json()",
+									"    pm.expect(jsonData.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_bank}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_bank}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"code\":\"TMB\",\"intitule\":\"Trust Marchand Bank\",\"userId\":1,\"id\":7}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_bank}}/api/modifybank",
+							"host": [
+								"{{base_bank}}"
+							],
+							"path": [
+								"api",
+								"modifybank"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modifybank_on_line",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"pm.test(\"Response has a data property\", () => {",
+									"    var jsonData = pm.response.json()",
+									"    pm.expect(jsonData.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_bank}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_bank}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\":\"AFB\",\n    \"intitule\":\"Afriland First Bank\",\n    \"userId\":1,\n    \"id\":5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-comptebancaire-dev.apps.kubedev.hologram.cd/micro-service-bank/api/modifybank",
+							"protocol": "https",
+							"host": [
+								"api-comptebancaire-dev",
+								"apps",
+								"kubedev",
+								"hologram",
+								"cd"
+							],
+							"path": [
+								"micro-service-bank",
+								"api",
+								"modifybank"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "multiplebank",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", () => {",
+									"    pm.response.to.have.status(200);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_bank}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_bank}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{base_bank}}/api/multiplebank/",
+							"host": [
+								"{{base_bank}}"
+							],
+							"path": [
+								"api",
+								"multiplebank",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "multiplebank_on_line",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", () => {",
+									"    pm.response.to.have.status(200);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) "
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_bank}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "https://api-comptebancaire-dev.apps.kubedev.hologram.cd/micro-service-bank/api/multiplebank/?token={{token_bank}}",
+							"protocol": "https",
+							"host": [
+								"api-comptebancaire-dev",
+								"apps",
+								"kubedev",
+								"hologram",
+								"cd"
+							],
+							"path": [
+								"micro-service-bank",
+								"api",
+								"multiplebank",
+								""
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token_bank}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "siglebank",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", () => {",
+									"    pm.response.to.have.status(200);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_bank}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_bank}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{base_bank}}/api/siglebank/TMB",
+							"host": [
+								"{{base_bank}}"
+							],
+							"path": [
+								"api",
+								"siglebank",
+								"TMB"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AccountBank",
+			"item": [
+				{
+					"name": "saveaccountbank",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									"pm.test(\"Response has a data property\", () => {",
+									"    var jsonData = pm.response.json()",
+									"    pm.expect(jsonData.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUeGVBNFRWUE04QjNFNEptM0JQM2tSalM3UjBOQUpKRmx4NUNoam5SOV9nIn0.eyJleHAiOjE2ODU2Njk4ODUsImlhdCI6MTY4NTYyNjY4NSwianRpIjoiZTQ3N2FjNDAtMDJmZi00NGJmLThlOGItZjVjODE1OWQwZGY4IiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5hcHBzLmFieXN0ZXIuY29tL2F1dGgvcmVhbG1zL0RHSSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJhM2Q1OGMxNi0xMzU0LTQxYTktOTA3Yi03ODhhZTQ4YTQ3OTUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJCQUNLRU5ELURHSSIsInNlc3Npb25fc3RhdGUiOiI5MmY0MjU0Mi01OGUwLTQ4MjctYTk4Yi0zYmQ4NGFkZjUzMTAiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtbXMtZGdpIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6IjkyZjQyNTQyLTU4ZTAtNDgyNy1hOThiLTNiZDg0YWRmNTMxMCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYXBpLWNvbXB0ZWJhbmNhaXJlIn0.PhyUJMq54LF_4WKpxEfifjTah-0QngAi2e_0gbkcCd8Z0kwX8OyCvXPYRKoz8xU3uA6RILn9iOvAO9J85EfR_vUU-1neQlj8APiNNIc7K4oJ2qcFpcri_khQsUJPD98SShrlvgZ_jMquPQTCrbkxorQvHoabpniwWaQt-oVAziaDNghMGzaGp_9nl7LDdIstnvDI8_LZQRzj-XOLBDoXLyk8eBf3ooSLmzl0g0JjdIpjfods7QvukJQMH70dgJPiIa7f1MNox0_Z16IgDBne2OJBHjKUK5kakPltZzErZHKbWXWd8t95AEXCeo7_A_eaUvaUEEtIAMah9TlLFazb-w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\":\"USD-545225\",\n    \"intitule\":\"COMPTE TRESOR\",\n    \"userId\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_bank}}/api/saveaccountbank",
+							"host": [
+								"{{base_bank}}"
+							],
+							"path": [
+								"api",
+								"saveaccountbank"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modifyaccountbank",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									"pm.test(\"Response has a data property\", () => {",
+									"    var jsonData = pm.response.json()",
+									"    pm.expect(jsonData.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUeGVBNFRWUE04QjNFNEptM0JQM2tSalM3UjBOQUpKRmx4NUNoam5SOV9nIn0.eyJleHAiOjE2ODU2Njk4ODUsImlhdCI6MTY4NTYyNjY4NSwianRpIjoiZTQ3N2FjNDAtMDJmZi00NGJmLThlOGItZjVjODE1OWQwZGY4IiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5hcHBzLmFieXN0ZXIuY29tL2F1dGgvcmVhbG1zL0RHSSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJhM2Q1OGMxNi0xMzU0LTQxYTktOTA3Yi03ODhhZTQ4YTQ3OTUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJCQUNLRU5ELURHSSIsInNlc3Npb25fc3RhdGUiOiI5MmY0MjU0Mi01OGUwLTQ4MjctYTk4Yi0zYmQ4NGFkZjUzMTAiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtbXMtZGdpIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6IjkyZjQyNTQyLTU4ZTAtNDgyNy1hOThiLTNiZDg0YWRmNTMxMCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYXBpLWNvbXB0ZWJhbmNhaXJlIn0.PhyUJMq54LF_4WKpxEfifjTah-0QngAi2e_0gbkcCd8Z0kwX8OyCvXPYRKoz8xU3uA6RILn9iOvAO9J85EfR_vUU-1neQlj8APiNNIc7K4oJ2qcFpcri_khQsUJPD98SShrlvgZ_jMquPQTCrbkxorQvHoabpniwWaQt-oVAziaDNghMGzaGp_9nl7LDdIstnvDI8_LZQRzj-XOLBDoXLyk8eBf3ooSLmzl0g0JjdIpjfods7QvukJQMH70dgJPiIa7f1MNox0_Z16IgDBne2OJBHjKUK5kakPltZzErZHKbWXWd8t95AEXCeo7_A_eaUvaUEEtIAMah9TlLFazb-w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUeGVBNFRWUE04QjNFNEptM0JQM2tSalM3UjBOQUpKRmx4NUNoam5SOV9nIn0.eyJleHAiOjE2ODU2Njk4ODUsImlhdCI6MTY4NTYyNjY4NSwianRpIjoiZTQ3N2FjNDAtMDJmZi00NGJmLThlOGItZjVjODE1OWQwZGY4IiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5hcHBzLmFieXN0ZXIuY29tL2F1dGgvcmVhbG1zL0RHSSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJhM2Q1OGMxNi0xMzU0LTQxYTktOTA3Yi03ODhhZTQ4YTQ3OTUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJCQUNLRU5ELURHSSIsInNlc3Npb25fc3RhdGUiOiI5MmY0MjU0Mi01OGUwLTQ4MjctYTk4Yi0zYmQ4NGFkZjUzMTAiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtbXMtZGdpIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6IjkyZjQyNTQyLTU4ZTAtNDgyNy1hOThiLTNiZDg0YWRmNTMxMCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYXBpLWNvbXB0ZWJhbmNhaXJlIn0.PhyUJMq54LF_4WKpxEfifjTah-0QngAi2e_0gbkcCd8Z0kwX8OyCvXPYRKoz8xU3uA6RILn9iOvAO9J85EfR_vUU-1neQlj8APiNNIc7K4oJ2qcFpcri_khQsUJPD98SShrlvgZ_jMquPQTCrbkxorQvHoabpniwWaQt-oVAziaDNghMGzaGp_9nl7LDdIstnvDI8_LZQRzj-XOLBDoXLyk8eBf3ooSLmzl0g0JjdIpjfods7QvukJQMH70dgJPiIa7f1MNox0_Z16IgDBne2OJBHjKUK5kakPltZzErZHKbWXWd8t95AEXCeo7_A_eaUvaUEEtIAMah9TlLFazb-w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\":\"USD-545225\",\n    \"intitule\":\"COMPTE TRESOR PUBLIC\",\n    \"userId\":1,\"id\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_bank}}/api/modifyaccountbank",
+							"host": [
+								"{{base_bank}}"
+							],
+							"path": [
+								"api",
+								"modifyaccountbank"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "multipleaccountbank",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", () => {",
+									"    pm.response.to.have.status(200);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUeGVBNFRWUE04QjNFNEptM0JQM2tSalM3UjBOQUpKRmx4NUNoam5SOV9nIn0.eyJleHAiOjE2ODU2Njk4ODUsImlhdCI6MTY4NTYyNjY4NSwianRpIjoiZTQ3N2FjNDAtMDJmZi00NGJmLThlOGItZjVjODE1OWQwZGY4IiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5hcHBzLmFieXN0ZXIuY29tL2F1dGgvcmVhbG1zL0RHSSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJhM2Q1OGMxNi0xMzU0LTQxYTktOTA3Yi03ODhhZTQ4YTQ3OTUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJCQUNLRU5ELURHSSIsInNlc3Npb25fc3RhdGUiOiI5MmY0MjU0Mi01OGUwLTQ4MjctYTk4Yi0zYmQ4NGFkZjUzMTAiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtbXMtZGdpIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6IjkyZjQyNTQyLTU4ZTAtNDgyNy1hOThiLTNiZDg0YWRmNTMxMCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYXBpLWNvbXB0ZWJhbmNhaXJlIn0.PhyUJMq54LF_4WKpxEfifjTah-0QngAi2e_0gbkcCd8Z0kwX8OyCvXPYRKoz8xU3uA6RILn9iOvAO9J85EfR_vUU-1neQlj8APiNNIc7K4oJ2qcFpcri_khQsUJPD98SShrlvgZ_jMquPQTCrbkxorQvHoabpniwWaQt-oVAziaDNghMGzaGp_9nl7LDdIstnvDI8_LZQRzj-XOLBDoXLyk8eBf3ooSLmzl0g0JjdIpjfods7QvukJQMH70dgJPiIa7f1MNox0_Z16IgDBne2OJBHjKUK5kakPltZzErZHKbWXWd8t95AEXCeo7_A_eaUvaUEEtIAMah9TlLFazb-w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{base_bank}}/api/multipleaccountbank/",
+							"host": [
+								"{{base_bank}}"
+							],
+							"path": [
+								"api",
+								"multipleaccountbank",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sigleaccountbank",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", () => {",
+									"    pm.response.to.have.status(200);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUeGVBNFRWUE04QjNFNEptM0JQM2tSalM3UjBOQUpKRmx4NUNoam5SOV9nIn0.eyJleHAiOjE2ODU2Njk4ODUsImlhdCI6MTY4NTYyNjY4NSwianRpIjoiZTQ3N2FjNDAtMDJmZi00NGJmLThlOGItZjVjODE1OWQwZGY4IiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5hcHBzLmFieXN0ZXIuY29tL2F1dGgvcmVhbG1zL0RHSSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJhM2Q1OGMxNi0xMzU0LTQxYTktOTA3Yi03ODhhZTQ4YTQ3OTUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJCQUNLRU5ELURHSSIsInNlc3Npb25fc3RhdGUiOiI5MmY0MjU0Mi01OGUwLTQ4MjctYTk4Yi0zYmQ4NGFkZjUzMTAiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtbXMtZGdpIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6IjkyZjQyNTQyLTU4ZTAtNDgyNy1hOThiLTNiZDg0YWRmNTMxMCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYXBpLWNvbXB0ZWJhbmNhaXJlIn0.PhyUJMq54LF_4WKpxEfifjTah-0QngAi2e_0gbkcCd8Z0kwX8OyCvXPYRKoz8xU3uA6RILn9iOvAO9J85EfR_vUU-1neQlj8APiNNIc7K4oJ2qcFpcri_khQsUJPD98SShrlvgZ_jMquPQTCrbkxorQvHoabpniwWaQt-oVAziaDNghMGzaGp_9nl7LDdIstnvDI8_LZQRzj-XOLBDoXLyk8eBf3ooSLmzl0g0JjdIpjfods7QvukJQMH70dgJPiIa7f1MNox0_Z16IgDBne2OJBHjKUK5kakPltZzErZHKbWXWd8t95AEXCeo7_A_eaUvaUEEtIAMah9TlLFazb-w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{base_bank}}/api/sigleaccountbank/USD-45532",
+							"host": [
+								"{{base_bank}}"
+							],
+							"path": [
+								"api",
+								"sigleaccountbank",
+								"USD-45532"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.sendRequest({",
+					"    url: pm.environment.get(\"Auth_Url\"),",
+					"    method: 'POST',",
+					"    header: {",
+					"        'Content-Type': 'application/json'",
+					"    },",
+					"    body: {",
+					"        mode: 'application/json',",
+					"        raw: JSON.stringify( ",
+					"            {",
+					"                app_id: \"api-comptebancaire\",",
+					"                password: \"xbcneudgtiod654789\"",
+					"             })",
+					"        ",
+					"},",
+					"    function(err, res) {",
+					"        // Set token",
+					"        pm.environment.set(\"token_cour\", res.json().access_token)",
+					"    }",
+					"        ",
+					"});",
+					"                ",
+					"            ",
+					"",
+					"",
+					"    ",
+					"         "
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

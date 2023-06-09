@@ -1,0 +1,3376 @@
+{
+	"info": {
+		"_postman_id": "bc851f70-a5d9-4425-a424-5ba0f7508481",
+		"name": "erp_dgi_ms_ObservationContribuable",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15766545",
+		"_collection_link": "https://restless-rocket-158458.postman.co/workspace/Abyster~58627cf8-8f78-4a30-b973-7ad1ddc6ffcc/collection/15766545-bc851f70-a5d9-4425-a424-5ba0f7508481?action=share&creator=15766545&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "api_ms_ObservationContribuable",
+			"item": [
+				{
+					"name": "createDetailObservation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUeGVBNFRWUE04QjNFNEptM0JQM2tSalM3UjBOQUpKRmx4NUNoam5SOV9nIn0.eyJleHAiOjE2Nzk2ODQ5OTAsImlhdCI6MTY3OTY3NDE5MCwianRpIjoiMTA5MTg3Y2YtYzA3OC00ZWRjLWJmZDgtYWYzZjA0MjkzZDM4IiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5hcHBzLmFieXN0ZXIuY29tL2F1dGgvcmVhbG1zL0RHSSIsInN1YiI6ImQ3ZTE2MTBlLWI5M2ItNDYzOC1hZTIzLTNmZGVhZmUxNmEwMiIsInR5cCI6IkJlYXJlciIsImF6cCI6IkJBQ0tFTkQtREdJIiwic2Vzc2lvbl9zdGF0ZSI6IjQ5Zjg2NzBjLWIxM2MtNDA3MC1hODRhLTJhOTk4ZTBjMmE3OSIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsibXNfdGVzdCJdfSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwic2lkIjoiNDlmODY3MGMtYjEzYy00MDcwLWE4NGEtMmE5OThlMGMyYTc5IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhcGktZW5yZWdpc3RyZW1lbnRjb3VycmllciJ9.q-VuOfBaSnrnDeqMrn1FyUzhqqz9UAnHuqrkj5jQF0yKZv54ly9Wdntr0oYmgxeIrC7NIpvySg6CVw4jrV_65_jsvvdSnjF3DvgB-j6Aa6D9nf_A0ik3wbTXU7bSdCFdx4WKoDo87rCE26OKclIzOKqtYLN4moyUAszadEe9iLNEBP3JrtU3JSZS9tMku6xcZNqnmFOVhzG6_e4tZ4AFsazJfAU2OkWbs_dSLEPIyQHhvpGCQUw12Xyrr4mzSW_Gx4-3ZkfFdFJvtIVKsVRhgGNvTHUAvjQtwRA68AmulLf2_JrwZQQUDAb4_AUnF_1TrDziwZG2Ys3Z29-S6wFXPA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUeGVBNFRWUE04QjNFNEptM0JQM2tSalM3UjBOQUpKRmx4NUNoam5SOV9nIn0.eyJleHAiOjE2NzkwNTU3MTUsImlhdCI6MTY3OTA0NDkxNSwianRpIjoiYjI1MzZmNWMtZTAwZi00NDlhLTlkMWQtZmIzZDIzYzAyZjRjIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5hcHBzLmFieXN0ZXIuY29tL2F1dGgvcmVhbG1zL0RHSSIsInN1YiI6ImQ3ZTE2MTBlLWI5M2ItNDYzOC1hZTIzLTNmZGVhZmUxNmEwMiIsInR5cCI6IkJlYXJlciIsImF6cCI6IkJBQ0tFTkQtREdJIiwic2Vzc2lvbl9zdGF0ZSI6IjkwMzFhNjk5LTdhOTktNDE2Yi1hMTk4LThkODE4YzQxYmJmMSIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsibXNfdGVzdCJdfSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwic2lkIjoiOTAzMWE2OTktN2E5OS00MTZiLWExOTgtOGQ4MThjNDFiYmYxIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhcGktZW5yZWdpc3RyZW1lbnRjb3VycmllciJ9.BuR45OxoLAfxxjFwLcDwoF80vepxU4c8zNAuRcSkbPfgQRPIkXzTpirChpM77ooOOreNb1Qq9jKLXPZZcpRom-acZicz1W_SROKjEsNOyUuFmLEKj8o4MSJaqQFJITVT69KceZw2cqVYTygAZY1XONnNqAjhxqB5YLg3UTvBhKS8Gh-iaGv4dXB8dYBAJ6S2CW9LvkcRrbg54TiKChlCptjHy9JITrWWzWIf_Iwhn5T5_ZC8neFJdAThz0gU0nl57AQG1MOlexpHPczuJprZFDsa0D1QcOTonHiZpbZP1MsDqP5rm_zeO_v5b6ITaBwfeogQYwCPWho1ytfOB-RIig",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "app_id_receive",
+								"value": "ms_test",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"referenceDocument\":\"Détail observation du contribuable\",\r\n    \"dateDecision\":\"18/04/2023\",\r\n    \"decision\":\"Gestion observation du contribuable\",\r\n    \"motifDecision\":\"Non paiement des différents impôts\",\r\n    \"agentCreate\":\"Willy\",\r\n    \"fkObservations\":1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api-erp-dgi/api/observations/v1/createDetailObservation/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-erp-dgi",
+								"api",
+								"observations",
+								"v1",
+								"createDetailObservation",
+								""
+							]
+						},
+						"description": "Cette méthode permet d'insérer un Détail Observation du contribuable. Il faudrait fournir les attributs suivants:\n\n1. referenceDocument\n2. dateDecision\n3. decision\n4. motifDecision\n5. agentCreate\n6. fkObservation"
+					},
+					"response": [
+						{
+							"name": "ResultCreateDetailObservation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"referenceDocument\":\"Denonciation mise sous scellé\",\r\n    \"dateDecision\":\"02/03/2023\",\r\n    \"decision\":\"Mise sous scellé\",\r\n    \"motifDecision\":\"Non paiement des différents impôts\",\r\n    \"agentCreate\":\"Willy\",\r\n    \"fkObservations\":1\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api-erp-dgi/api/observations/v1/createDetailObservation/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api-erp-dgi",
+										"api",
+										"observations",
+										"v1",
+										"createDetailObservation",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.0  Java/Oracle Corporation/1.8)"
+								},
+								{
+									"key": "Server",
+									"value": "GlassFish Server Open Source Edition  4.0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "1209600"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Mar 2023 09:55:22 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1"
+								}
+							],
+							"cookie": [],
+							"body": "1"
+						},
+						{
+							"name": "createDetailObservation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUeGVBNFRWUE04QjNFNEptM0JQM2tSalM3UjBOQUpKRmx4NUNoam5SOV9nIn0.eyJleHAiOjE2NzkwNTU3MTUsImlhdCI6MTY3OTA0NDkxNSwianRpIjoiYjI1MzZmNWMtZTAwZi00NDlhLTlkMWQtZmIzZDIzYzAyZjRjIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5hcHBzLmFieXN0ZXIuY29tL2F1dGgvcmVhbG1zL0RHSSIsInN1YiI6ImQ3ZTE2MTBlLWI5M2ItNDYzOC1hZTIzLTNmZGVhZmUxNmEwMiIsInR5cCI6IkJlYXJlciIsImF6cCI6IkJBQ0tFTkQtREdJIiwic2Vzc2lvbl9zdGF0ZSI6IjkwMzFhNjk5LTdhOTktNDE2Yi1hMTk4LThkODE4YzQxYmJmMSIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsibXNfdGVzdCJdfSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwic2lkIjoiOTAzMWE2OTktN2E5OS00MTZiLWExOTgtOGQ4MThjNDFiYmYxIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhcGktZW5yZWdpc3RyZW1lbnRjb3VycmllciJ9.BuR45OxoLAfxxjFwLcDwoF80vepxU4c8zNAuRcSkbPfgQRPIkXzTpirChpM77ooOOreNb1Qq9jKLXPZZcpRom-acZicz1W_SROKjEsNOyUuFmLEKj8o4MSJaqQFJITVT69KceZw2cqVYTygAZY1XONnNqAjhxqB5YLg3UTvBhKS8Gh-iaGv4dXB8dYBAJ6S2CW9LvkcRrbg54TiKChlCptjHy9JITrWWzWIf_Iwhn5T5_ZC8neFJdAThz0gU0nl57AQG1MOlexpHPczuJprZFDsa0D1QcOTonHiZpbZP1MsDqP5rm_zeO_v5b6ITaBwfeogQYwCPWho1ytfOB-RIig",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "app_id_receive",
+										"value": "ms_test",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"referenceDocument\":\"Détail observation du contribuable\",\r\n    \"dateDecision\":\"17/03/2023\",\r\n    \"decision\":\"Gestion observation du contribuable\",\r\n    \"motifDecision\":\"Non paiement des différents impôts\",\r\n    \"agentCreate\":\"Willy\",\r\n    \"fkObservations\":1,\r\n    \"fkDoc\":3\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api-erp-dgi/api/observations/v1/createDetailObservation/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api-erp-dgi",
+										"api",
+										"observations",
+										"v1",
+										"createDetailObservation",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.0  Java/Oracle Corporation/1.8)"
+								},
+								{
+									"key": "Server",
+									"value": "GlassFish Server Open Source Edition  4.0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "1209600"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Mar 2023 08:22:53 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1"
+								}
+							],
+							"cookie": [],
+							"body": "1"
+						}
+					]
+				},
+				{
+					"name": "UpdateDetailObservation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"pm.test(\"Response has a data property\", () => {",
+									"    pm.expect(pm.response.json.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_obs}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_obs}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "app_id_receive",
+								"value": "ms_test",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"iddetailObservations\":7,\r\n    \"referenceDocument\":\"546372\",\r\n    \"dateDecision\":\"18/04/2023\",\r\n    \"decision\":\"Non imposition\",\r\n    \"motifDecision\":\"Observation motivée\",\r\n    \"agentUpdate\":\"Willy\",\r\n    \"fkObservations\":2\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_obs}}/api-erp-dgi/api/observations/v1/updateDetailObservation/",
+							"host": [
+								"{{base_obs}}"
+							],
+							"path": [
+								"api-erp-dgi",
+								"api",
+								"observations",
+								"v1",
+								"updateDetailObservation",
+								""
+							]
+						},
+						"description": "Cette méthode permet de modifier un Détail Observation en tout fournissant les attributs suivants:\n\n1. iddetailObservations\n2. referenceDocument\n3. dateDecision\n4. decision\n5. motifDecision\n6. agentUpdate\n7. fkObservation"
+					},
+					"response": [
+						{
+							"name": "ResultUpdateDetailObservation",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"iddetailObservations\":5,\r\n    \"referenceDocument\":\"Denonciation mise sous scellé\",\r\n    \"dateDecision\":\"02/03/2023\",\r\n    \"decision\":\"Mise sous scellé\",\r\n    \"motifDecision\":\"Non paiement des différents impôts\",\r\n    \"agentUpdate\":\"Willy\",\r\n    \"fkObservations\":1\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api-erp-dgi/api/observations/v1/updateDetailObservation/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api-erp-dgi",
+										"api",
+										"observations",
+										"v1",
+										"updateDetailObservation",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.0  Java/Oracle Corporation/1.8)"
+								},
+								{
+									"key": "Server",
+									"value": "GlassFish Server Open Source Edition  4.0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "1209600"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Mar 2023 10:01:27 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1"
+								}
+							],
+							"cookie": [],
+							"body": "1"
+						},
+						{
+							"name": "UpdateDetailObservation",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"iddetailObservations\":5,\r\n    \"referenceDocument\":\"Denonciation mise sous scellé\",\r\n    \"dateDecision\":\"02/03/2023\",\r\n    \"decision\":\"Mise sous scellé\",\r\n    \"motifDecision\":\"Non paiement des différents impôts\",\r\n    \"agentUpdate\":\"Willy\",\r\n    \"fkObservations\":1,\r\n    \"fkDoc\":3\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api-erp-dgi/api/observations/v1/updateDetailObservation/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api-erp-dgi",
+										"api",
+										"observations",
+										"v1",
+										"updateDetailObservation",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.0  Java/Oracle Corporation/1.8)"
+								},
+								{
+									"key": "Server",
+									"value": "GlassFish Server Open Source Edition  4.0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "1209600"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Mar 2023 08:18:09 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1"
+								}
+							],
+							"cookie": [],
+							"body": "1"
+						},
+						{
+							"name": "UpdateDetailObservation",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUeGVBNFRWUE04QjNFNEptM0JQM2tSalM3UjBOQUpKRmx4NUNoam5SOV9nIn0.eyJleHAiOjE2NzkwNTYxNjYsImlhdCI6MTY3OTA0NTM2NiwianRpIjoiZDBmZDBiYmEtNDUxMi00ZjhhLTkzOTktNTQ2MDY2YjdlM2NkIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5hcHBzLmFieXN0ZXIuY29tL2F1dGgvcmVhbG1zL0RHSSIsInN1YiI6ImQ3ZTE2MTBlLWI5M2ItNDYzOC1hZTIzLTNmZGVhZmUxNmEwMiIsInR5cCI6IkJlYXJlciIsImF6cCI6IkJBQ0tFTkQtREdJIiwic2Vzc2lvbl9zdGF0ZSI6IjU2MzNhODk5LTc5YjgtNGNlMC05OWU5LTIxYjRhY2JhYWJhZiIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsibXNfdGVzdCJdfSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwic2lkIjoiNTYzM2E4OTktNzliOC00Y2UwLTk5ZTktMjFiNGFjYmFhYmFmIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhcGktZW5yZWdpc3RyZW1lbnRjb3VycmllciJ9.f0TRY64_Sl7xTTDxSJA5Gne-IAsmXFJ4dQSKOQrKXz-hINfeBrXGb_j9VKddupNl9bFF3Iq4mT6nRr8xx8l3-KBANDcMu4PNb6PQ_LffaXSbY_YRjlObf0eTgS48n-IE5yvJb55qkHx_lylRU3DVpte51fwyH--7B20T4c4rFAppTWpcXw4L2hXXgcUQW3pQKm35xNdE8SXTDaDZ0rUGZ7v0H1eJCMNGHlk52jGHu-8vRCOA-Sk_NXRPdgZQxS-AtePycGMFx2epxCU6nKvNkEnHx386N6h3rYC8PivUSP4OdHaibinIt7hSsMpHAEdiregRGrutKcMT2Qh8uTAT0Q",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "app_id_receive",
+										"value": "ms_test",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"iddetailObservations\":5,\r\n    \"referenceDocument\":\"Observation du contribuable mise sous scellé\",\r\n    \"dateDecision\":\"17/03/2023\",\r\n    \"decision\":\"Gestion observation\",\r\n    \"motifDecision\":\"Non paiement des différents impôts\",\r\n    \"agentUpdate\":\"Willy\",\r\n    \"fkObservations\":1,\r\n    \"fkDoc\":3\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api-erp-dgi/api/observations/v1/updateDetailObservation/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api-erp-dgi",
+										"api",
+										"observations",
+										"v1",
+										"updateDetailObservation",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.0  Java/Oracle Corporation/1.8)"
+								},
+								{
+									"key": "Server",
+									"value": "GlassFish Server Open Source Edition  4.0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "1209600"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Mar 2023 08:31:09 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1"
+								}
+							],
+							"cookie": [],
+							"body": "1"
+						},
+						{
+							"name": "UpdateDetailObservation",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUeGVBNFRWUE04QjNFNEptM0JQM2tSalM3UjBOQUpKRmx4NUNoam5SOV9nIn0.eyJleHAiOjE2NzkwNTYxNjYsImlhdCI6MTY3OTA0NTM2NiwianRpIjoiZDBmZDBiYmEtNDUxMi00ZjhhLTkzOTktNTQ2MDY2YjdlM2NkIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5hcHBzLmFieXN0ZXIuY29tL2F1dGgvcmVhbG1zL0RHSSIsInN1YiI6ImQ3ZTE2MTBlLWI5M2ItNDYzOC1hZTIzLTNmZGVhZmUxNmEwMiIsInR5cCI6IkJlYXJlciIsImF6cCI6IkJBQ0tFTkQtREdJIiwic2Vzc2lvbl9zdGF0ZSI6IjU2MzNhODk5LTc5YjgtNGNlMC05OWU5LTIxYjRhY2JhYWJhZiIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsibXNfdGVzdCJdfSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwic2lkIjoiNTYzM2E4OTktNzliOC00Y2UwLTk5ZTktMjFiNGFjYmFhYmFmIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhcGktZW5yZWdpc3RyZW1lbnRjb3VycmllciJ9.f0TRY64_Sl7xTTDxSJA5Gne-IAsmXFJ4dQSKOQrKXz-hINfeBrXGb_j9VKddupNl9bFF3Iq4mT6nRr8xx8l3-KBANDcMu4PNb6PQ_LffaXSbY_YRjlObf0eTgS48n-IE5yvJb55qkHx_lylRU3DVpte51fwyH--7B20T4c4rFAppTWpcXw4L2hXXgcUQW3pQKm35xNdE8SXTDaDZ0rUGZ7v0H1eJCMNGHlk52jGHu-8vRCOA-Sk_NXRPdgZQxS-AtePycGMFx2epxCU6nKvNkEnHx386N6h3rYC8PivUSP4OdHaibinIt7hSsMpHAEdiregRGrutKcMT2Qh8uTAT0Q",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "app_id_receive",
+										"value": "ms_test",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"iddetailObservations\":7,\r\n    \"referenceDocument\":\"546372\",\r\n    \"dateDecision\":\"18/04/2023\",\r\n    \"decision\":\"Non imposition\",\r\n    \"motifDecision\":\"Observation motivée\",\r\n    \"agentUpdate\":\"Willy\",\r\n    \"fkObservations\":2\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api-erp-dgi/api/observations/v1/updateDetailObservation/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api-erp-dgi",
+										"api",
+										"observations",
+										"v1",
+										"updateDetailObservation",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.0  Java/Oracle Corporation/1.8)"
+								},
+								{
+									"key": "Server",
+									"value": "GlassFish Server Open Source Edition  4.0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "1209600"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Apr 2023 15:19:52 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1"
+								}
+							],
+							"cookie": [],
+							"body": "1"
+						}
+					]
+				},
+				{
+					"name": "DeleteDetailObservation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"pm.test(\"Response has a data property\", () => {",
+									"    pm.expect(pm.response.json.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_obs}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_obs}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "app_id_receive",
+								"value": "ms_test",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_obs}}/api-erp-dgi/api/observations/v1/deleteDetailObservation/3/Sylvain/",
+							"host": [
+								"{{base_obs}}"
+							],
+							"path": [
+								"api-erp-dgi",
+								"api",
+								"observations",
+								"v1",
+								"deleteDetailObservation",
+								"3",
+								"Sylvain",
+								""
+							]
+						},
+						"description": "Cette méthode permet de d'éffectuer une suppression logique d'un un Détail Observation du contribuable en fournissant l'identifiant de la main lévée et l'agent qui éffectue ladite suppression."
+					},
+					"response": [
+						{
+							"name": "ResultDeleteDetailObservation",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api-erp-dgi/api/observations/v1/deleteDetailObservation/4/Sylvain/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api-erp-dgi",
+										"api",
+										"observations",
+										"v1",
+										"deleteDetailObservation",
+										"4",
+										"Sylvain",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.0  Java/Oracle Corporation/1.8)"
+								},
+								{
+									"key": "Server",
+									"value": "GlassFish Server Open Source Edition  4.0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "1209600"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Mar 2023 10:26:09 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1"
+								}
+							],
+							"cookie": [],
+							"body": "1"
+						},
+						{
+							"name": "DeleteDetailObservation",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUeGVBNFRWUE04QjNFNEptM0JQM2tSalM3UjBOQUpKRmx4NUNoam5SOV9nIn0.eyJleHAiOjE2NzkwNTYxNjYsImlhdCI6MTY3OTA0NTM2NiwianRpIjoiZDBmZDBiYmEtNDUxMi00ZjhhLTkzOTktNTQ2MDY2YjdlM2NkIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5hcHBzLmFieXN0ZXIuY29tL2F1dGgvcmVhbG1zL0RHSSIsInN1YiI6ImQ3ZTE2MTBlLWI5M2ItNDYzOC1hZTIzLTNmZGVhZmUxNmEwMiIsInR5cCI6IkJlYXJlciIsImF6cCI6IkJBQ0tFTkQtREdJIiwic2Vzc2lvbl9zdGF0ZSI6IjU2MzNhODk5LTc5YjgtNGNlMC05OWU5LTIxYjRhY2JhYWJhZiIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsibXNfdGVzdCJdfSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwic2lkIjoiNTYzM2E4OTktNzliOC00Y2UwLTk5ZTktMjFiNGFjYmFhYmFmIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhcGktZW5yZWdpc3RyZW1lbnRjb3VycmllciJ9.f0TRY64_Sl7xTTDxSJA5Gne-IAsmXFJ4dQSKOQrKXz-hINfeBrXGb_j9VKddupNl9bFF3Iq4mT6nRr8xx8l3-KBANDcMu4PNb6PQ_LffaXSbY_YRjlObf0eTgS48n-IE5yvJb55qkHx_lylRU3DVpte51fwyH--7B20T4c4rFAppTWpcXw4L2hXXgcUQW3pQKm35xNdE8SXTDaDZ0rUGZ7v0H1eJCMNGHlk52jGHu-8vRCOA-Sk_NXRPdgZQxS-AtePycGMFx2epxCU6nKvNkEnHx386N6h3rYC8PivUSP4OdHaibinIt7hSsMpHAEdiregRGrutKcMT2Qh8uTAT0Q",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "app_id_receive",
+										"value": "ms_test",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/api-erp-dgi/api/observations/v1/deleteDetailObservation/3/Sylvain/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api-erp-dgi",
+										"api",
+										"observations",
+										"v1",
+										"deleteDetailObservation",
+										"3",
+										"Sylvain",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.0  Java/Oracle Corporation/1.8)"
+								},
+								{
+									"key": "Server",
+									"value": "GlassFish Server Open Source Edition  4.0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "1209600"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Mar 2023 08:38:03 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1"
+								}
+							],
+							"cookie": [],
+							"body": "1"
+						}
+					]
+				},
+				{
+					"name": "ListDetailObservation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", () => {",
+									"    pm.response.to.have.status(200);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_obs}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUeGVBNFRWUE04QjNFNEptM0JQM2tSalM3UjBOQUpKRmx4NUNoam5SOV9nIn0.eyJleHAiOjE2NzkwNTA2MDEsImlhdCI6MTY3OTAzOTgwMSwianRpIjoiZmI4MDlkNmItZGIxNy00ZGMxLTg0NjEtYTNlMWIyNTY1NjllIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5hcHBzLmFieXN0ZXIuY29tL2F1dGgvcmVhbG1zL0RHSSIsInN1YiI6ImQ3ZTE2MTBlLWI5M2ItNDYzOC1hZTIzLTNmZGVhZmUxNmEwMiIsInR5cCI6IkJlYXJlciIsImF6cCI6IkJBQ0tFTkQtREdJIiwic2Vzc2lvbl9zdGF0ZSI6IjM0NGVmOGIwLTIzYjctNGYxNC1hNjZlLTk5ZDA3MjVkOGI4NCIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsibXNfdGVzdCJdfSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwic2lkIjoiMzQ0ZWY4YjAtMjNiNy00ZjE0LWE2NmUtOTlkMDcyNWQ4Yjg0IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhcGktZW5yZWdpc3RyZW1lbnRjb3VycmllciJ9.PwH2YyPdrK1ywt__oZcnez9FptgcB6fAAKHDrCGq09QRkkiD6h4whieDfvfPgVFbSkLhp3Lr8aaAv1h4ykhuFPRtvMKK5YHxC-L6SGAkzsNL2IGPDjlSp7ONJiRquryHFqW2bpR0GjczhnXOSiNJAwqLdnOChjm42FBcl-l1nHrLOGqRH5-GjU-hZpXkbvd6vVGmzLvHUK4yyTLDUo5yltOGYfHyLqLl5N-Ao2UHXn6C2t1IGviQabWLmFO_2bMT7cPlUeMCuFjCjVmhObQIRh1rpSUDPPwLSx0BXt-m8v7zpTP8dKGqK9av-A2kSNuxvSmIaE009ssUp-tBUUKcnw",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "app_id_receive",
+								"value": "ms_test",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_obs}}/api-erp-dgi/api/observations/v1/listDetailObsevations/",
+							"host": [
+								"{{base_obs}}"
+							],
+							"path": [
+								"api-erp-dgi",
+								"api",
+								"observations",
+								"v1",
+								"listDetailObsevations",
+								""
+							]
+						},
+						"description": "Cette méthode permet d'afficher tous les Détails Observations du contribuable."
+					},
+					"response": [
+						{
+							"name": "ResultListDetailObservation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api-erp-dgi/api/observations/v1/listDetailObsevations/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api-erp-dgi",
+										"api",
+										"observations",
+										"v1",
+										"listDetailObsevations",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.0  Java/Oracle Corporation/1.8)"
+								},
+								{
+									"key": "Server",
+									"value": "GlassFish Server Open Source Edition  4.0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "1209600"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Mar 2023 10:27:22 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "888"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"agentCreate\": \"0800\",\n        \"decision\": \"Wed Feb 15 00:00:00 CET 2023\",\n        \"id_detailObservations\": 1,\n        \"referenceDocument\": \"11250\",\n        \"motifDecision\": \"Reclamation\",\n        \"dateCreate\": \"Wed Feb 22 15:08:04 CET 2023\",\n        \"Fk_Observations\": 2,\n        \"etat\": 1,\n        \"dateDecision\": \"Favorable\"\n    },\n    {\n        \"agentCreate\": \"0900\",\n        \"decision\": \"Sun Feb 19 00:00:00 CET 2023\",\n        \"id_detailObservations\": 3,\n        \"referenceDocument\": \"12300\",\n        \"motifDecision\": \"Reclamation immédiate\",\n        \"dateCreate\": \"Wed Feb 22 15:09:24 CET 2023\",\n        \"Fk_Observations\": 1,\n        \"etat\": 1,\n        \"dateDecision\": \"Defavorable\"\n    },\n    {\n        \"agentCreate\": \"Willy\",\n        \"agentUpdate\": \"Willy\",\n        \"decision\": \"Thu Mar 02 00:00:00 CET 2023\",\n        \"dateUpdate\": \"Thu Mar 02 11:01:27 CET 2023\",\n        \"id_detailObservations\": 5,\n        \"referenceDocument\": \"Denonciation mise sous scellé\",\n        \"motifDecision\": \"Non paiement des différents impôts\",\n        \"dateCreate\": \"Thu Mar 02 10:55:22 CET 2023\",\n        \"Fk_Observations\": 1,\n        \"etat\": 1,\n        \"dateDecision\": \"Mise sous scellé\"\n    }\n]"
+						},
+						{
+							"name": "ListDetailObservation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUeGVBNFRWUE04QjNFNEptM0JQM2tSalM3UjBOQUpKRmx4NUNoam5SOV9nIn0.eyJleHAiOjE2NzkwNTA2MDEsImlhdCI6MTY3OTAzOTgwMSwianRpIjoiZmI4MDlkNmItZGIxNy00ZGMxLTg0NjEtYTNlMWIyNTY1NjllIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5hcHBzLmFieXN0ZXIuY29tL2F1dGgvcmVhbG1zL0RHSSIsInN1YiI6ImQ3ZTE2MTBlLWI5M2ItNDYzOC1hZTIzLTNmZGVhZmUxNmEwMiIsInR5cCI6IkJlYXJlciIsImF6cCI6IkJBQ0tFTkQtREdJIiwic2Vzc2lvbl9zdGF0ZSI6IjM0NGVmOGIwLTIzYjctNGYxNC1hNjZlLTk5ZDA3MjVkOGI4NCIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsibXNfdGVzdCJdfSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwic2lkIjoiMzQ0ZWY4YjAtMjNiNy00ZjE0LWE2NmUtOTlkMDcyNWQ4Yjg0IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhcGktZW5yZWdpc3RyZW1lbnRjb3VycmllciJ9.PwH2YyPdrK1ywt__oZcnez9FptgcB6fAAKHDrCGq09QRkkiD6h4whieDfvfPgVFbSkLhp3Lr8aaAv1h4ykhuFPRtvMKK5YHxC-L6SGAkzsNL2IGPDjlSp7ONJiRquryHFqW2bpR0GjczhnXOSiNJAwqLdnOChjm42FBcl-l1nHrLOGqRH5-GjU-hZpXkbvd6vVGmzLvHUK4yyTLDUo5yltOGYfHyLqLl5N-Ao2UHXn6C2t1IGviQabWLmFO_2bMT7cPlUeMCuFjCjVmhObQIRh1rpSUDPPwLSx0BXt-m8v7zpTP8dKGqK9av-A2kSNuxvSmIaE009ssUp-tBUUKcnw",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "app_id_receive",
+										"value": "ms_test",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/api-erp-dgi/api/observations/v1/listDetailObsevations/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api-erp-dgi",
+										"api",
+										"observations",
+										"v1",
+										"listDetailObsevations",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.0  Java/Oracle Corporation/1.8)"
+								},
+								{
+									"key": "Server",
+									"value": "GlassFish Server Open Source Edition  4.0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "1209600"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Mar 2023 07:17:18 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "888"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"agentCreate\": \"0800\",\n        \"decision\": \"Wed Feb 15 00:00:00 CET 2023\",\n        \"id_detailObservations\": 1,\n        \"referenceDocument\": \"11250\",\n        \"motifDecision\": \"Reclamation\",\n        \"dateCreate\": \"Wed Feb 22 15:08:04 CET 2023\",\n        \"Fk_Observations\": 2,\n        \"etat\": 1,\n        \"dateDecision\": \"Favorable\"\n    },\n    {\n        \"agentCreate\": \"0900\",\n        \"decision\": \"Sun Feb 19 00:00:00 CET 2023\",\n        \"id_detailObservations\": 3,\n        \"referenceDocument\": \"12300\",\n        \"motifDecision\": \"Reclamation immédiate\",\n        \"dateCreate\": \"Wed Feb 22 15:09:24 CET 2023\",\n        \"Fk_Observations\": 1,\n        \"etat\": 1,\n        \"dateDecision\": \"Defavorable\"\n    },\n    {\n        \"agentCreate\": \"Willy\",\n        \"agentUpdate\": \"Willy\",\n        \"decision\": \"Thu Mar 02 00:00:00 CET 2023\",\n        \"dateUpdate\": \"Thu Mar 02 11:01:27 CET 2023\",\n        \"id_detailObservations\": 5,\n        \"referenceDocument\": \"Denonciation mise sous scellé\",\n        \"motifDecision\": \"Non paiement des différents impôts\",\n        \"dateCreate\": \"Thu Mar 02 10:55:22 CET 2023\",\n        \"Fk_Observations\": 1,\n        \"etat\": 1,\n        \"dateDecision\": \"Mise sous scellé\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "ViewDetailObservation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"pm.test(\"Response has a data property\", () => {",
+									"    pm.expect(pm.response.json.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_obs}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_obs}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "app_id_receive",
+								"value": "ms_test",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_obs}}/api-erp-dgi/api/observations/v1/viewDetailObsevations/1/",
+							"host": [
+								"{{base_obs}}"
+							],
+							"path": [
+								"api-erp-dgi",
+								"api",
+								"observations",
+								"v1",
+								"viewDetailObsevations",
+								"1",
+								""
+							]
+						},
+						"description": "Cette méthode permet de lister un Détail Observation dont l'identifiant vaut 5."
+					},
+					"response": [
+						{
+							"name": "ResultViewDetailObservation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api-erp-dgi/api/observations/v1/viewDetailObsevations/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api-erp-dgi",
+										"api",
+										"observations",
+										"v1",
+										"viewDetailObsevations",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.0  Java/Oracle Corporation/1.8)"
+								},
+								{
+									"key": "Server",
+									"value": "GlassFish Server Open Source Edition  4.0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "1209600"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Mar 2023 11:21:34 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "375"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"agentCreate\": \"Willy\",\n        \"agentUpdate\": \"Willy\",\n        \"decision\": \"Thu Mar 02 00:00:00 CET 2023\",\n        \"dateUpdate\": \"Thu Mar 02 11:01:27 CET 2023\",\n        \"id_detailObservations\": 5,\n        \"referenceDocument\": \"Denonciation mise sous scellé\",\n        \"motifDecision\": \"Non paiement des différents impôts\",\n        \"dateCreate\": \"Thu Mar 02 10:55:22 CET 2023\",\n        \"Fk_Observations\": 1,\n        \"etat\": 1,\n        \"dateDecision\": \"Mise sous scellé\"\n    }\n]"
+						},
+						{
+							"name": "ViewDetailObservation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUeGVBNFRWUE04QjNFNEptM0JQM2tSalM3UjBOQUpKRmx4NUNoam5SOV9nIn0.eyJleHAiOjE2NzkwNTA2MDEsImlhdCI6MTY3OTAzOTgwMSwianRpIjoiZmI4MDlkNmItZGIxNy00ZGMxLTg0NjEtYTNlMWIyNTY1NjllIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5hcHBzLmFieXN0ZXIuY29tL2F1dGgvcmVhbG1zL0RHSSIsInN1YiI6ImQ3ZTE2MTBlLWI5M2ItNDYzOC1hZTIzLTNmZGVhZmUxNmEwMiIsInR5cCI6IkJlYXJlciIsImF6cCI6IkJBQ0tFTkQtREdJIiwic2Vzc2lvbl9zdGF0ZSI6IjM0NGVmOGIwLTIzYjctNGYxNC1hNjZlLTk5ZDA3MjVkOGI4NCIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsibXNfdGVzdCJdfSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwic2lkIjoiMzQ0ZWY4YjAtMjNiNy00ZjE0LWE2NmUtOTlkMDcyNWQ4Yjg0IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhcGktZW5yZWdpc3RyZW1lbnRjb3VycmllciJ9.PwH2YyPdrK1ywt__oZcnez9FptgcB6fAAKHDrCGq09QRkkiD6h4whieDfvfPgVFbSkLhp3Lr8aaAv1h4ykhuFPRtvMKK5YHxC-L6SGAkzsNL2IGPDjlSp7ONJiRquryHFqW2bpR0GjczhnXOSiNJAwqLdnOChjm42FBcl-l1nHrLOGqRH5-GjU-hZpXkbvd6vVGmzLvHUK4yyTLDUo5yltOGYfHyLqLl5N-Ao2UHXn6C2t1IGviQabWLmFO_2bMT7cPlUeMCuFjCjVmhObQIRh1rpSUDPPwLSx0BXt-m8v7zpTP8dKGqK9av-A2kSNuxvSmIaE009ssUp-tBUUKcnw",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "app_id_receive",
+										"value": "ms_test",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/api-erp-dgi/api/observations/v1/viewDetailObsevations/5/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api-erp-dgi",
+										"api",
+										"observations",
+										"v1",
+										"viewDetailObsevations",
+										"5",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.0  Java/Oracle Corporation/1.8)"
+								},
+								{
+									"key": "Server",
+									"value": "GlassFish Server Open Source Edition  4.0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "1209600"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Mar 2023 07:12:27 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "375"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"agentCreate\": \"Willy\",\n        \"agentUpdate\": \"Willy\",\n        \"decision\": \"Thu Mar 02 00:00:00 CET 2023\",\n        \"dateUpdate\": \"Thu Mar 02 11:01:27 CET 2023\",\n        \"id_detailObservations\": 5,\n        \"referenceDocument\": \"Denonciation mise sous scellé\",\n        \"motifDecision\": \"Non paiement des différents impôts\",\n        \"dateCreate\": \"Thu Mar 02 10:55:22 CET 2023\",\n        \"Fk_Observations\": 1,\n        \"etat\": 1,\n        \"dateDecision\": \"Mise sous scellé\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "CreateObservation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"pm.test(\"Response has a data property\", () => {",
+									"    pm.expect(pm.response.json.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_obs}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_obs}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "app_id_receive",
+								"value": "ms_test",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"objet\":\"Micro service Observation du contribuable\",\r\n    \"dateObservations\":\"17/03/2023\",\r\n    \"dateCloture\":\"28/03/2023\",\r\n    \"agentCreate\":\"Jonathan\",\r\n    \"fkRepertoire\":3\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_obs}}/api-erp-dgi/api/observations/v1/createObservation/",
+							"host": [
+								"{{base_obs}}"
+							],
+							"path": [
+								"api-erp-dgi",
+								"api",
+								"observations",
+								"v1",
+								"createObservation",
+								""
+							]
+						},
+						"description": "Cette méthode permet d'insérer une Observation du contribuable. Il faudrait fournir les attributs suivants:\n\n1. objet\n2. dateObservations\n3. dateCloture\n4. agentCreate\n5. fkRepertoire"
+					},
+					"response": [
+						{
+							"name": "ResultCreateObservation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"objet\":\"Paiement AMR\",\r\n    \"dateObservations\":\"02/03/2023\",\r\n    \"dateCloture\":\"11/03/2023\",\r\n    \"agentCreate\":\"Jonathan\",\r\n    \"fkRepertoire\":3\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api-erp-dgi/api/observations/v1/createObservation/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api-erp-dgi",
+										"api",
+										"observations",
+										"v1",
+										"createObservation",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.0  Java/Oracle Corporation/1.8)"
+								},
+								{
+									"key": "Server",
+									"value": "GlassFish Server Open Source Edition  4.0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "1209600"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Mar 2023 09:14:42 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1"
+								}
+							],
+							"cookie": [],
+							"body": "1"
+						},
+						{
+							"name": "CreateObservation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUeGVBNFRWUE04QjNFNEptM0JQM2tSalM3UjBOQUpKRmx4NUNoam5SOV9nIn0.eyJleHAiOjE2NzkwNTYxNjYsImlhdCI6MTY3OTA0NTM2NiwianRpIjoiZDBmZDBiYmEtNDUxMi00ZjhhLTkzOTktNTQ2MDY2YjdlM2NkIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5hcHBzLmFieXN0ZXIuY29tL2F1dGgvcmVhbG1zL0RHSSIsInN1YiI6ImQ3ZTE2MTBlLWI5M2ItNDYzOC1hZTIzLTNmZGVhZmUxNmEwMiIsInR5cCI6IkJlYXJlciIsImF6cCI6IkJBQ0tFTkQtREdJIiwic2Vzc2lvbl9zdGF0ZSI6IjU2MzNhODk5LTc5YjgtNGNlMC05OWU5LTIxYjRhY2JhYWJhZiIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsibXNfdGVzdCJdfSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwic2lkIjoiNTYzM2E4OTktNzliOC00Y2UwLTk5ZTktMjFiNGFjYmFhYmFmIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhcGktZW5yZWdpc3RyZW1lbnRjb3VycmllciJ9.f0TRY64_Sl7xTTDxSJA5Gne-IAsmXFJ4dQSKOQrKXz-hINfeBrXGb_j9VKddupNl9bFF3Iq4mT6nRr8xx8l3-KBANDcMu4PNb6PQ_LffaXSbY_YRjlObf0eTgS48n-IE5yvJb55qkHx_lylRU3DVpte51fwyH--7B20T4c4rFAppTWpcXw4L2hXXgcUQW3pQKm35xNdE8SXTDaDZ0rUGZ7v0H1eJCMNGHlk52jGHu-8vRCOA-Sk_NXRPdgZQxS-AtePycGMFx2epxCU6nKvNkEnHx386N6h3rYC8PivUSP4OdHaibinIt7hSsMpHAEdiregRGrutKcMT2Qh8uTAT0Q",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "app_id_receive",
+										"value": "ms_test",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"objet\":\"Micro service Observation du contribuable\",\r\n    \"dateObservations\":\"17/03/2023\",\r\n    \"dateCloture\":\"28/03/2023\",\r\n    \"agentCreate\":\"Jonathan\",\r\n    \"fkRepertoire\":3\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api-erp-dgi/api/observations/v1/createObservation/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api-erp-dgi",
+										"api",
+										"observations",
+										"v1",
+										"createObservation",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.0  Java/Oracle Corporation/1.8)"
+								},
+								{
+									"key": "Server",
+									"value": "GlassFish Server Open Source Edition  4.0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "1209600"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Mar 2023 08:44:54 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1"
+								}
+							],
+							"cookie": [],
+							"body": "1"
+						}
+					]
+				},
+				{
+					"name": "UpdateObservation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"pm.test(\"Response has a data property\", () => {",
+									"    pm.expect(pm.response.json.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_obs}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_obs}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "app_id_receive",
+								"value": "ms_test",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idObservations\":1,\r\n    \"objet\":\"Denonciation\",\r\n    \"dateObservations\":\"17/03/2023\",\r\n    \"dateCloture\":\"30/03/2023\",\r\n    \"agentUpdate\":\"Joé-Jonathan\",\r\n    \"fkRepertoire\":3\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_obs}}/api-erp-dgi/api/observations/v1/updateObservation/",
+							"host": [
+								"{{base_obs}}"
+							],
+							"path": [
+								"api-erp-dgi",
+								"api",
+								"observations",
+								"v1",
+								"updateObservation",
+								""
+							]
+						},
+						"description": "Cette méthode permet de modifier une Observation en tout fournissant les attributs suivants:\n\n1. idObservations\n2. objet\n3. dateObservations\n4. dateCloture\n5. agentCreate\n6. fkRepertoire"
+					},
+					"response": [
+						{
+							"name": "ResultUpdateObservation",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idObservations\":1,\r\n    \"objet\":\"Denonciation\",\r\n    \"dateObservations\":\"02/03/2023\",\r\n    \"dateCloture\":\"11/03/2023\",\r\n    \"agentUpdate\":\"Jonathan\",\r\n    \"fkRepertoire\":3\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api-erp-dgi/api/observations/v1/updateObservation/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api-erp-dgi",
+										"api",
+										"observations",
+										"v1",
+										"updateObservation",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.0  Java/Oracle Corporation/1.8)"
+								},
+								{
+									"key": "Server",
+									"value": "GlassFish Server Open Source Edition  4.0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "1209600"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Mar 2023 09:26:16 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1"
+								}
+							],
+							"cookie": [],
+							"body": "1"
+						},
+						{
+							"name": "UpdateObservation",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUeGVBNFRWUE04QjNFNEptM0JQM2tSalM3UjBOQUpKRmx4NUNoam5SOV9nIn0.eyJleHAiOjE2NzkwNTYxNjYsImlhdCI6MTY3OTA0NTM2NiwianRpIjoiZDBmZDBiYmEtNDUxMi00ZjhhLTkzOTktNTQ2MDY2YjdlM2NkIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5hcHBzLmFieXN0ZXIuY29tL2F1dGgvcmVhbG1zL0RHSSIsInN1YiI6ImQ3ZTE2MTBlLWI5M2ItNDYzOC1hZTIzLTNmZGVhZmUxNmEwMiIsInR5cCI6IkJlYXJlciIsImF6cCI6IkJBQ0tFTkQtREdJIiwic2Vzc2lvbl9zdGF0ZSI6IjU2MzNhODk5LTc5YjgtNGNlMC05OWU5LTIxYjRhY2JhYWJhZiIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsibXNfdGVzdCJdfSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwic2lkIjoiNTYzM2E4OTktNzliOC00Y2UwLTk5ZTktMjFiNGFjYmFhYmFmIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhcGktZW5yZWdpc3RyZW1lbnRjb3VycmllciJ9.f0TRY64_Sl7xTTDxSJA5Gne-IAsmXFJ4dQSKOQrKXz-hINfeBrXGb_j9VKddupNl9bFF3Iq4mT6nRr8xx8l3-KBANDcMu4PNb6PQ_LffaXSbY_YRjlObf0eTgS48n-IE5yvJb55qkHx_lylRU3DVpte51fwyH--7B20T4c4rFAppTWpcXw4L2hXXgcUQW3pQKm35xNdE8SXTDaDZ0rUGZ7v0H1eJCMNGHlk52jGHu-8vRCOA-Sk_NXRPdgZQxS-AtePycGMFx2epxCU6nKvNkEnHx386N6h3rYC8PivUSP4OdHaibinIt7hSsMpHAEdiregRGrutKcMT2Qh8uTAT0Q",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "app_id_receive",
+										"value": "ms_test",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idObservations\":1,\r\n    \"objet\":\"Denonciation\",\r\n    \"dateObservations\":\"17/03/2023\",\r\n    \"dateCloture\":\"30/03/2023\",\r\n    \"agentUpdate\":\"Joé-Jonathan\",\r\n    \"fkRepertoire\":3\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api-erp-dgi/api/observations/v1/updateObservation/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api-erp-dgi",
+										"api",
+										"observations",
+										"v1",
+										"updateObservation",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.0  Java/Oracle Corporation/1.8)"
+								},
+								{
+									"key": "Server",
+									"value": "GlassFish Server Open Source Edition  4.0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "1209600"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Mar 2023 09:00:11 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1"
+								}
+							],
+							"cookie": [],
+							"body": "1"
+						}
+					]
+				},
+				{
+					"name": "DeleteObservation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"pm.test(\"Response has a data property\", () => {",
+									"    pm.expect(pm.response.json.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_obs}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_obs}}",
+								"type": "text"
+							},
+							{
+								"key": "conten-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "app_id_receive",
+								"value": "ms_test",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_obs}}/api-erp-dgi/api/observations/v1/deleteObservation/4/Joéé/",
+							"host": [
+								"{{base_obs}}"
+							],
+							"path": [
+								"api-erp-dgi",
+								"api",
+								"observations",
+								"v1",
+								"deleteObservation",
+								"4",
+								"Joéé",
+								""
+							]
+						},
+						"description": "Cette méthode permet de d'éffectuer une suppression logique d'un une Observation du contribuable en fournissant l'identifiant de la main lévée et l'agent qui éffectue ladite suppression."
+					},
+					"response": [
+						{
+							"name": "ResultDeleteObservation",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api-erp-dgi/api/observations/v1/deleteObservation/2/Joéé/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api-erp-dgi",
+										"api",
+										"observations",
+										"v1",
+										"deleteObservation",
+										"2",
+										"Joéé",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.0  Java/Oracle Corporation/1.8)"
+								},
+								{
+									"key": "Server",
+									"value": "GlassFish Server Open Source Edition  4.0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "1209600"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Mar 2023 09:30:52 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1"
+								}
+							],
+							"cookie": [],
+							"body": "1"
+						},
+						{
+							"name": "DeleteObservation",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUeGVBNFRWUE04QjNFNEptM0JQM2tSalM3UjBOQUpKRmx4NUNoam5SOV9nIn0.eyJleHAiOjE2NzkwNTYxNjYsImlhdCI6MTY3OTA0NTM2NiwianRpIjoiZDBmZDBiYmEtNDUxMi00ZjhhLTkzOTktNTQ2MDY2YjdlM2NkIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5hcHBzLmFieXN0ZXIuY29tL2F1dGgvcmVhbG1zL0RHSSIsInN1YiI6ImQ3ZTE2MTBlLWI5M2ItNDYzOC1hZTIzLTNmZGVhZmUxNmEwMiIsInR5cCI6IkJlYXJlciIsImF6cCI6IkJBQ0tFTkQtREdJIiwic2Vzc2lvbl9zdGF0ZSI6IjU2MzNhODk5LTc5YjgtNGNlMC05OWU5LTIxYjRhY2JhYWJhZiIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsibXNfdGVzdCJdfSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwic2lkIjoiNTYzM2E4OTktNzliOC00Y2UwLTk5ZTktMjFiNGFjYmFhYmFmIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhcGktZW5yZWdpc3RyZW1lbnRjb3VycmllciJ9.f0TRY64_Sl7xTTDxSJA5Gne-IAsmXFJ4dQSKOQrKXz-hINfeBrXGb_j9VKddupNl9bFF3Iq4mT6nRr8xx8l3-KBANDcMu4PNb6PQ_LffaXSbY_YRjlObf0eTgS48n-IE5yvJb55qkHx_lylRU3DVpte51fwyH--7B20T4c4rFAppTWpcXw4L2hXXgcUQW3pQKm35xNdE8SXTDaDZ0rUGZ7v0H1eJCMNGHlk52jGHu-8vRCOA-Sk_NXRPdgZQxS-AtePycGMFx2epxCU6nKvNkEnHx386N6h3rYC8PivUSP4OdHaibinIt7hSsMpHAEdiregRGrutKcMT2Qh8uTAT0Q",
+										"type": "text"
+									},
+									{
+										"key": "conten-type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "app_id_receive",
+										"value": "ms_test",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/api-erp-dgi/api/observations/v1/deleteObservation/4/Joéé/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api-erp-dgi",
+										"api",
+										"observations",
+										"v1",
+										"deleteObservation",
+										"4",
+										"Joéé",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.0  Java/Oracle Corporation/1.8)"
+								},
+								{
+									"key": "Server",
+									"value": "GlassFish Server Open Source Edition  4.0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "1209600"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 17 Mar 2023 08:50:55 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1"
+								}
+							],
+							"cookie": [],
+							"body": "1"
+						}
+					]
+				},
+				{
+					"name": "ListObservation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", () => {",
+									"    pm.response.to.have.status(200);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_obs}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_obs}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "app_id_receive",
+								"value": "ms_test",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api-erp-dgi/api/observations/v1/listObservations/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-erp-dgi",
+								"api",
+								"observations",
+								"v1",
+								"listObservations",
+								""
+							]
+						},
+						"description": "Cette méthode permet d'afficher toutes les Observations du contribuable."
+					},
+					"response": [
+						{
+							"name": "ResultListObservation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api-erp-dgi/api/observations/v1/listObservations/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api-erp-dgi",
+										"api",
+										"observations",
+										"v1",
+										"listObservations",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.0  Java/Oracle Corporation/1.8)"
+								},
+								{
+									"key": "Server",
+									"value": "GlassFish Server Open Source Edition  4.0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "1209600"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Mar 2023 09:39:36 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1220"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"Fk_Repertoire\": 3,\n        \"agentCreate\": \"4103\",\n        \"agentUpdate\": \"Jonathan\",\n        \"agentDelete\": \"Joéé\",\n        \"dateUpdate\": \"Thu Mar 02 10:26:16 CET 2023\",\n        \"id_observations\": 1,\n        \"objet\": \"Denonciation\",\n        \"dateCreate\": \"Wed Feb 22 15:03:04 CET 2023\",\n        \"etat\": 1,\n        \"dateCloture\": \"Sat Mar 11 00:00:00 CET 2023\",\n        \"dateDelete\": \"Mon Feb 27 09:14:33 CET 2023\",\n        \"dateObservations\": \"Thu Mar 02 00:00:00 CET 2023\"\n    },\n    {\n        \"Fk_Repertoire\": 2,\n        \"agentCreate\": \"4103\",\n        \"id_observations\": 3,\n        \"objet\": \"PAIEMENT DISPONIBLE\",\n        \"dateCreate\": \"Wed Feb 22 15:05:45 CET 2023\",\n        \"etat\": 1,\n        \"dateCloture\": \"Wed Feb 22 00:00:00 CET 2023\",\n        \"dateObservations\": \"Thu Feb 02 00:00:00 CET 2023\"\n    },\n    {\n        \"Fk_Repertoire\": 1,\n        \"agentCreate\": \"Joe\",\n        \"id_observations\": 4,\n        \"objet\": \"Valildé\",\n        \"dateCreate\": \"Mon Feb 27 10:07:32 CET 2023\",\n        \"etat\": 1\n    },\n    {\n        \"Fk_Repertoire\": 1,\n        \"agentCreate\": \"Joe\",\n        \"id_observations\": 5,\n        \"objet\": \"Paiement échelonné\",\n        \"dateCreate\": \"Mon Feb 27 10:15:12 CET 2023\",\n        \"etat\": 1,\n        \"dateCloture\": \"Mon Mar 27 00:00:00 CEST 2023\",\n        \"dateObservations\": \"Mon Feb 27 00:00:00 CET 2023\"\n    },\n    {\n        \"Fk_Repertoire\": 3,\n        \"agentCreate\": \"Jonathan\",\n        \"id_observations\": 6,\n        \"objet\": \"Paiement AMR\",\n        \"dateCreate\": \"Thu Mar 02 10:14:42 CET 2023\",\n        \"etat\": 1,\n        \"dateCloture\": \"Sat Mar 11 00:00:00 CET 2023\",\n        \"dateObservations\": \"Thu Mar 02 00:00:00 CET 2023\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "ViewObservation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", () => {",
+									"    pm.response.to.have.status(200);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_obs}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_obs}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "app_id_receive",
+								"value": "ms_test",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_obs}}/api-erp-dgi/api/observations/v1/viewObsevations/4/",
+							"host": [
+								"{{base_obs}}"
+							],
+							"path": [
+								"api-erp-dgi",
+								"api",
+								"observations",
+								"v1",
+								"viewObsevations",
+								"4",
+								""
+							]
+						},
+						"description": "Cette méthode permet de lister une Observation du contribuable dont l'identifiant vaut 2."
+					},
+					"response": [
+						{
+							"name": "ResultViewObservation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api-erp-dgi/api/observations/v1/viewObsevations/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api-erp-dgi",
+										"api",
+										"observations",
+										"v1",
+										"viewObsevations",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.0  Java/Oracle Corporation/1.8)"
+								},
+								{
+									"key": "Server",
+									"value": "GlassFish Server Open Source Edition  4.0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "1209600"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Mar 2023 09:42:46 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "369"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"Fk_Repertoire\": 3,\n        \"agentCreate\": \"4103\",\n        \"agentUpdate\": \"Jonathan\",\n        \"agentDelete\": \"Joéé\",\n        \"dateUpdate\": \"Thu Mar 02 10:26:16 CET 2023\",\n        \"id_observations\": 1,\n        \"objet\": \"Denonciation\",\n        \"dateCreate\": \"Wed Feb 22 15:03:04 CET 2023\",\n        \"etat\": 1,\n        \"dateCloture\": \"Sat Mar 11 00:00:00 CET 2023\",\n        \"dateDelete\": \"Mon Feb 27 09:14:33 CET 2023\",\n        \"dateObservations\": \"Thu Mar 02 00:00:00 CET 2023\"\n    }\n]"
+						},
+						{
+							"name": "ViewObservation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api-erp-dgi/api/observations/v1/viewObsevations/4/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api-erp-dgi",
+										"api",
+										"observations",
+										"v1",
+										"viewObsevations",
+										"4",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.0  Java/Oracle Corporation/1.8)"
+								},
+								{
+									"key": "Server",
+									"value": "GlassFish Server Open Source Edition  4.0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "1209600"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 16 Mar 2023 13:49:24 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "133"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"Fk_Repertoire\": 1,\n        \"agentCreate\": \"Joe\",\n        \"id_observations\": 4,\n        \"objet\": \"Valildé\",\n        \"dateCreate\": \"Mon Feb 27 10:07:32 CET 2023\",\n        \"etat\": 1\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "ValidateObservation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"pm.test(\"Response has a data property\", () => {",
+									"    pm.expect(pm.response.json.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_obs}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base_obs}}/api-erp-dgi/api/observations/v1/validateObservation/5/Juslin/",
+							"host": [
+								"{{base_obs}}"
+							],
+							"path": [
+								"api-erp-dgi",
+								"api",
+								"observations",
+								"v1",
+								"validateObservation",
+								"5",
+								"Juslin",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ValidateObservation",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api-erp-dgi/api/observations/v1/validateObservation/2/Juslin/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api-erp-dgi",
+										"api",
+										"observations",
+										"v1",
+										"validateObservation",
+										"2",
+										"Juslin",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.0  Java/Oracle Corporation/1.8)"
+								},
+								{
+									"key": "Server",
+									"value": "GlassFish Server Open Source Edition  4.0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "1209600"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Apr 2023 14:22:50 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1"
+								}
+							],
+							"cookie": [],
+							"body": "1"
+						}
+					]
+				},
+				{
+					"name": "RejeterObservation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"pm.test(\"Response has a data property\", () => {",
+									"    pm.expect(pm.response.json.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_obs}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUeGVBNFRWUE04QjNFNEptM0JQM2tSalM3UjBOQUpKRmx4NUNoam5SOV9nIn0.eyJleHAiOjE2ODYwMDQyMjIsImlhdCI6MTY4NTk2MTAyMiwianRpIjoiYTY1ODkzOTQtMTVjNy00ZTcyLWFkNTEtNzQxYTg0MzMwYmRjIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5hcHBzLmFieXN0ZXIuY29tL2F1dGgvcmVhbG1zL0RHSSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI4NTlmMzZiYS1kOTNjLTQ3NTAtODYzYi02NDg1ZGFlNDgxMDYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJCQUNLRU5ELURHSSIsInNlc3Npb25fc3RhdGUiOiJkNmM1ZTQ1Mi1hMmY5LTQ0MTctYmM1Ni1lYTEwNjk3ZTkxYjYiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtbXMtZGdpIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6ImQ2YzVlNDUyLWEyZjktNDQxNy1iYzU2LWVhMTA2OTdlOTFiNiIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYXBpLW9ic2VydmF0aW9uY29udHJpYnVhYmxlIn0.qic0U9YvblBlG0pkQXeX5q2fKhhsOggFhQtaTvMsh7mv2zWHurXq5JpBKdFdbz3lmucIWn-6bOB9814Y6eMmrTOyPna6m2gYPH9pHJjEC3CZ_nrQLWWsVZWYYS66CfZAkpJlkbdh7rzBhS75z83eNBy1m3QYieZtR7iopxUBrQdfr5fp9W_vsrkPq1MDofluty7BTP8f_pAObyK3OeUzZh0sKzzxU53FfmE5DN73duTJqNGCeG_33r42Bg4rsNKuc0YtzuFjd5uRsemLPWtDMMIXpeKml01FMrCK2spOPyBsM5dusZ1ZnLWJhJMdk_YNDTfKw2-jsAjWJstcZ4Tzww",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{base_obs}}/api-erp-dgi/api/observations/v1/rejeterObservation/3/Jean Paul/",
+							"host": [
+								"{{base_obs}}"
+							],
+							"path": [
+								"api-erp-dgi",
+								"api",
+								"observations",
+								"v1",
+								"rejeterObservation",
+								"3",
+								"Jean Paul",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "RejeterObservation",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api-erp-dgi/api/observations/v1/rejeterObservation/1/Jean Paul/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api-erp-dgi",
+										"api",
+										"observations",
+										"v1",
+										"rejeterObservation",
+										"1",
+										"Jean Paul",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.0  Java/Oracle Corporation/1.8)"
+								},
+								{
+									"key": "Server",
+									"value": "GlassFish Server Open Source Edition  4.0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "1209600"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Apr 2023 14:23:38 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1"
+								}
+							],
+							"cookie": [],
+							"body": "1"
+						}
+					]
+				},
+				{
+					"name": "CloturerObservation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"pm.test(\"Response has a data property\", () => {",
+									"    pm.expect(pm.response.json.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_obs}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base_obs}}/api-erp-dgi/api/observations/v1/cloturerObservation/5/Juslin/",
+							"host": [
+								"{{base_obs}}"
+							],
+							"path": [
+								"api-erp-dgi",
+								"api",
+								"observations",
+								"v1",
+								"cloturerObservation",
+								"5",
+								"Juslin",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "CloturerObservation",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api-erp-dgi/api/observations/v1/cloturerObservation/2/Juslin/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api-erp-dgi",
+										"api",
+										"observations",
+										"v1",
+										"cloturerObservation",
+										"2",
+										"Juslin",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.0  Java/Oracle Corporation/1.8)"
+								},
+								{
+									"key": "Server",
+									"value": "GlassFish Server Open Source Edition  4.0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "1209600"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Apr 2023 14:24:18 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1"
+								}
+							],
+							"cookie": [],
+							"body": "1"
+						}
+					]
+				},
+				{
+					"name": "getContribuableByid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", () => {",
+									"    pm.response.to.have.status(200);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_obs}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_obs}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_obs}}/api-erp-dgi/api/saisie/v1/getContribuableByid/2",
+							"host": [
+								"{{base_obs}}"
+							],
+							"path": [
+								"api-erp-dgi",
+								"api",
+								"saisie",
+								"v1",
+								"getContribuableByid",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getContribuableByid",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api-erp-dgi/api/saisie/v1/getContribuableByid/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api-erp-dgi",
+										"api",
+										"saisie",
+										"v1",
+										"getContribuableByid",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  4.0  Java/Oracle Corporation/1.8)"
+								},
+								{
+									"key": "Server",
+									"value": "GlassFish Server Open Source Edition  4.0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "1209600"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 15 May 2023 14:27:24 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "248"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 202,\n    \"content\": {\n        \"id\": 2,\n        \"agentCreation\": \"Martial\",\n        \"dateCreation\": \"2023-05-12T11:13:37.157Z\",\n        \"dateDelete\": null,\n        \"agentDelete\": null,\n        \"dateUpdate\": null,\n        \"agentUpdate\": null,\n        \"numero_contrainte\": \"CON-02\",\n        \"fk_contribuable\": 2,\n        \"fk_agent_signataire\": 2\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "New Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"pm.test(\"Response has a data property\", () => {",
+									"    pm.expect(pm.response.json.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_obs}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"app_id\": \"api-enregistrementcourrier\",\r\n  \"password\": \"12345654xwuipoerf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_obs}}/api-erp-dgi/api/observations/v1/getToken/",
+							"host": [
+								"{{base_obs}}"
+							],
+							"path": [
+								"api-erp-dgi",
+								"api",
+								"observations",
+								"v1",
+								"getToken",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TestEndPointListObservation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", () => {",
+									"    pm.response.to.have.status(200);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_obs}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-observationcontribuable-dev.apps.kubedev.hologram.cd/api-erp-dgi/api/observations/v1/listObservations/",
+							"protocol": "https",
+							"host": [
+								"api-observationcontribuable-dev",
+								"apps",
+								"kubedev",
+								"hologram",
+								"cd"
+							],
+							"path": [
+								"api-erp-dgi",
+								"api",
+								"observations",
+								"v1",
+								"listObservations",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TestEndPointListDetailObservationContribuable",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", () => {",
+									"    pm.response.to.have.status(200);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_obs}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-observationcontribuable-dev.apps.kubedev.hologram.cd/api-erp-dgi/api/observations/v1/listDetailObsevations/",
+							"protocol": "https",
+							"host": [
+								"api-observationcontribuable-dev",
+								"apps",
+								"kubedev",
+								"hologram",
+								"cd"
+							],
+							"path": [
+								"api-erp-dgi",
+								"api",
+								"observations",
+								"v1",
+								"listDetailObsevations",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.sendRequest({",
+					"    url: pm.environment.get(\"Auth_Url\"),",
+					"    method: 'POST',",
+					"    header: {",
+					"        'Content-Type': 'application/json'",
+					"    },",
+					"    body: {",
+					"        mode: 'application/json',",
+					"        raw: JSON.stringify( ",
+					"            {",
+					"                app_id: \"api-observationcontribuable\",",
+					"                password: \"7006600gtrahde\"",
+					"             })",
+					"        ",
+					"},",
+					"    function(err, res) {",
+					"        // Set token",
+					"        pm.environment.set(\"token_cour\", res.json().access_token)",
+					"    }",
+					"        ",
+					"});",
+					"                ",
+					"            ",
+					"",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

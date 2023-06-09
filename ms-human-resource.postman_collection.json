@@ -1,0 +1,1403 @@
+{
+	"info": {
+		"_postman_id": "a398265f-3e4b-4b6a-a75f-bf17f55286b6",
+		"name": "MS-HUMAN-RESOURCES",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15766545",
+		"_collection_link": "https://restless-rocket-158458.postman.co/workspace/Abyster~58627cf8-8f78-4a30-b973-7ad1ddc6ffcc/collection/15766545-a398265f-3e4b-4b6a-a75f-bf17f55286b6?action=share&creator=15766545&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Affectation",
+			"item": [
+				{
+					"name": "saveaffectation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									"pm.test(\"Response has a data property\", () => {",
+									"    var jsonData = pm.response.json()",
+									"    pm.expect(jsonData.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_res}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_res}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"referencelettre\":\"REF-14522\",\n    \"dateaffectation\":\"14-02-2023\",\n    \"observation\":\"TEST\",\n    \"urllettreaffectation\":\"PATH_URL\",\n    \"agentaffectation\":\"1\",\n    \"lieuaffectation\":\"1\",\n    \"agentcreate\":\"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_res}}/ms-human-resources/api/saveaffectation",
+							"host": [
+								"{{base_res}}"
+							],
+							"path": [
+								"ms-human-resources",
+								"api",
+								"saveaffectation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modifyaffectation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									"pm.test(\"Response has a data property\", () => {",
+									"    var jsonData = pm.response.json()",
+									"    pm.expect(jsonData.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_res}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_res}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"referencelettre\":\"REF-14522-XXL\",\n    \"dateaffectation\":\"14-02-2023\",\n    \"observation\":\"TEST\",\n    \"urllettreaffectation\":\"PATH_URL\",\n    \"agentaffectation\":\"1\",\n    \"lieuaffectation\":\"1\",\n    \"agentcreate\":\"1\",\n    \"id\":3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_res}}/ms-human-resources/api/modifyaffectation",
+							"host": [
+								"{{base_res}}"
+							],
+							"path": [
+								"ms-human-resources",
+								"api",
+								"modifyaffectation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sigleaffectationbyid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", () => {",
+									"    pm.response.to.have.status(200);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_res}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_res}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_res}}/ms-human-resources/api/sigleaffectationbyid/3",
+							"host": [
+								"{{base_res}}"
+							],
+							"path": [
+								"ms-human-resources",
+								"api",
+								"sigleaffectationbyid",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sigleaffectationbyref",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									"pm.test(\"Response has a data property\", () => {",
+									"    var jsonData = pm.response.json()",
+									"    pm.expect(jsonData.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_res}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_res}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"reference\":\"REF-14522-XXL\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_res}}/ms-human-resources/api/sigleaffectationbyref",
+							"host": [
+								"{{base_res}}"
+							],
+							"path": [
+								"ms-human-resources",
+								"api",
+								"sigleaffectationbyref"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "multipleaffectation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", () => {",
+									"    pm.response.to.have.status(200);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUeGVBNFRWUE04QjNFNEptM0JQM2tSalM3UjBOQUpKRmx4NUNoam5SOV9nIn0.eyJleHAiOjE2ODU1NjUyNTUsImlhdCI6MTY4NTUyMjA1NSwianRpIjoiOGQ4YWMxMjUtOGE2Ny00NjZmLTkyMzItNmFmZTJkMDlmMTViIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5hcHBzLmFieXN0ZXIuY29tL2F1dGgvcmVhbG1zL0RHSSIsInN1YiI6ImQ3ZTE2MTBlLWI5M2ItNDYzOC1hZTIzLTNmZGVhZmUxNmEwMiIsInR5cCI6IkJlYXJlciIsImF6cCI6IkJBQ0tFTkQtREdJIiwic2Vzc2lvbl9zdGF0ZSI6ImI0ODIwNDIxLWFmZDYtNGYyNS1iZTczLTlmYTU0ZWYwNGQxMSIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsibXNfdGVzdCJdfSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwic2lkIjoiYjQ4MjA0MjEtYWZkNi00ZjI1LWJlNzMtOWZhNTRlZjA0ZDExIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhcGktZW5yZWdpc3RyZW1lbnRjb3VycmllciJ9.MPYe6c2SmwexS1RLnZ09hNE8JRue5i1xaP7UmyasCLlC5W8LoEa5eSNua8NLmtFmpQwd3tkPPmzsQEGVTZnA_d74_W4pi9pPHb24lEZi6rCqsRU0aikAQESmRPdXsrAJrIpbKYwYBZtBJbQxThbxzSWu_M8921VPEwGdEVeGauShJPcDYIt5FeXHNl8r88AQe442b66HtSgsCUE1AtjKr2PM2lfYgzz2iB27-3bKGF5rkzjAF7fIqP29JMAZz4uCGDOPYprdxrmK5DPkWL7oYBPRNwicYKgtYWT31GA5aO85J8D-nuZXclnd018kogSqbk71mCfwV5wQle2fHfy0FA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_res}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_res}}/ms-human-resources/api/multipleaffectation/31-05-2023/31-05-2023",
+							"host": [
+								"{{base_res}}"
+							],
+							"path": [
+								"ms-human-resources",
+								"api",
+								"multipleaffectation",
+								"31-05-2023",
+								"31-05-2023"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mise en disponibilité",
+			"item": [
+				{
+					"name": "savemisedisponibilite",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									"pm.test(\"Response has a data property\", () => {",
+									"    var jsonData = pm.response.json()",
+									"    pm.expect(jsonData.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_res}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_res}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"referencelettre\":\"REF-14522-MED\",\n    \"datedemande\":\"11-02-2023\",\n    \"motif\":\"Congé de paternité\",\n    \"urldemande\":\"PATH_URL\",\n    \"urllettreaccorder\":\"PATH_URL\",\n    \"agentmisedisponibilite\":\"1\",\n    \"agentcreate\":\"1\",\n    \"datedebut\":\"12-02-2023\",\n    \"datefin\":\"18-02-2023\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_res}}/ms-human-resources/api/savemisedisponibilite",
+							"host": [
+								"{{base_res}}"
+							],
+							"path": [
+								"ms-human-resources",
+								"api",
+								"savemisedisponibilite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modifymisedisponibilite",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									"pm.test(\"Response has a data property\", () => {",
+									"    var jsonData = pm.response.json()",
+									"    pm.expect(jsonData.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_res}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_res}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"referencelettre\":\"REF-0001-MED\",\"datedemande\":\"11-02-2023\",\"motif\":\"Congé de paternité\",\"urldemande\":\"PATH_URL\",\"urllettreaccorder\":\"PATH_URL\",\"agentmisedisponibilite\":\"1\",\"agentcreate\":\"1\",\"datedebut\":\"12-02-2023\",\"datefin\":\"18-02-2023\",\"id\":5}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_res}}/ms-human-resources/api/modifymisedisponibilite",
+							"host": [
+								"{{base_res}}"
+							],
+							"path": [
+								"ms-human-resources",
+								"api",
+								"modifymisedisponibilite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "siglemisedisponibilitebyid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", () => {",
+									"    pm.response.to.have.status(200);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_res}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_res}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_res}}/ms-human-resources/api/siglemisedisponibilitebyid/5",
+							"host": [
+								"{{base_res}}"
+							],
+							"path": [
+								"ms-human-resources",
+								"api",
+								"siglemisedisponibilitebyid",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "siglemisedisponibilitebyref",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									"pm.test(\"Response has a data property\", () => {",
+									"    var jsonData = pm.response.json()",
+									"    pm.expect(jsonData.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_res}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_res}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"reference\":\"REF-0001-MED\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_res}}/ms-human-resources/api/siglemisedisponibilitebyref",
+							"host": [
+								"{{base_res}}"
+							],
+							"path": [
+								"ms-human-resources",
+								"api",
+								"siglemisedisponibilitebyref"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "multiplemisedisponibilite",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", () => {",
+									"    pm.response.to.have.status(200);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_res}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_res}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_res}}/ms-human-resources/api/multiplemisedisponibilite/31-05-2023/31-05-2023",
+							"host": [
+								"{{base_res}}"
+							],
+							"path": [
+								"ms-human-resources",
+								"api",
+								"multiplemisedisponibilite",
+								"31-05-2023",
+								"31-05-2023"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mutation",
+			"item": [
+				{
+					"name": "savemutation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									"pm.test(\"Response has a data property\", () => {",
+									"    var jsonData = pm.response.json()",
+									"    pm.expect(jsonData.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_res}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_res}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"referencelettre\":\"REF-14522-MUT\",\"datemutation\":\"11-02-2023\",\"observation\":\"Création d'un nouveau siège\",\"urllettremutation\":\"PATH_URL\",\"agentmutation\":\"1\",\"agentcreate\":\"1\",\"lieumutation\":\"3\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_res}}/ms-human-resources/api/savemutation",
+							"host": [
+								"{{base_res}}"
+							],
+							"path": [
+								"ms-human-resources",
+								"api",
+								"savemutation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modifymutation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									"pm.test(\"Response has a data property\", () => {",
+									"    var jsonData = pm.response.json()",
+									"    pm.expect(jsonData.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_res}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_res}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"referencelettre\":\"REF-000XL-MUT\",\n    \"datemutation\":\"11-02-2023\",\n    \"observation\":\"Création d'un nouveau siège\",\n    \"urllettremutation\":\"PATH_URL\",\n    \"agentmutation\":\"1\",\n    \"agentcreate\":\"1\",\n    \"lieumutation\":\"3\",\n    \"id\":2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_res}}/ms-human-resources/api/modifymutation",
+							"host": [
+								"{{base_res}}"
+							],
+							"path": [
+								"ms-human-resources",
+								"api",
+								"modifymutation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "siglemutationbyid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", () => {",
+									"    pm.response.to.have.status(200);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_res}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_res}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_res}}/ms-human-resources/api/siglemutationbyid/2",
+							"host": [
+								"{{base_res}}"
+							],
+							"path": [
+								"ms-human-resources",
+								"api",
+								"siglemutationbyid",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "siglemutationbyref",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									"pm.test(\"Response has a data property\", () => {",
+									"    var jsonData = pm.response.json()",
+									"    pm.expect(jsonData.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_res}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_res}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"reference\":\"REF-000XL-MUT\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_res}}/ms-human-resources/api/siglemutationbyref",
+							"host": [
+								"{{base_res}}"
+							],
+							"path": [
+								"ms-human-resources",
+								"api",
+								"siglemutationbyref"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "multiplemutation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", () => {",
+									"    pm.response.to.have.status(200);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_res}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_res}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_res}}/ms-human-resources/api/multiplemutation/31-05-2023/31-05-2023",
+							"host": [
+								"{{base_res}}"
+							],
+							"path": [
+								"ms-human-resources",
+								"api",
+								"multiplemutation",
+								"31-05-2023",
+								"31-05-2023"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transfert",
+			"item": [
+				{
+					"name": "savetransfert",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									"pm.test(\"Response has a data property\", () => {",
+									"    var jsonData = pm.response.json()",
+									"    pm.expect(jsonData.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_res}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_res}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"referencelettre\":\"14522-TR\",\n    \"datetransfert\":\"11-02-2023\",\n    \"observation\":\"TEST\",\n    \"urllettretransfert\":\"PATH_URL\",\n    \"agenttransfert\":\"1\",\n    \"lieutransfert\":\"1\",\n    \"agentcreate\":\"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_res}}/ms-human-resources/api/savetransfert",
+							"host": [
+								"{{base_res}}"
+							],
+							"path": [
+								"ms-human-resources",
+								"api",
+								"savetransfert"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modifytransfert",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									"pm.test(\"Response has a data property\", () => {",
+									"    var jsonData = pm.response.json()",
+									"    pm.expect(jsonData.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_res}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_res}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"referencelettre\":\"REF-XLX-01-TR\",\n    \"datetransfert\":\"11-02-2023\",\n    \"observation\":\"TEST\",\n    \"urllettretransfert\":\"PATH_URL\",\n    \"agenttransfert\":\"1\",\n    \"lieutransfert\":\"1\",\n    \"agentcreate\":\"1\",\n    \"id\":3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_res}}/ms-human-resources/api/modifytransfert",
+							"host": [
+								"{{base_res}}"
+							],
+							"path": [
+								"ms-human-resources",
+								"api",
+								"modifytransfert"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sigletransfertbyid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", () => {",
+									"    pm.response.to.have.status(200);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_res}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_res}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_res}}/ms-human-resources/api/sigletransfertbyid/3",
+							"host": [
+								"{{base_res}}"
+							],
+							"path": [
+								"ms-human-resources",
+								"api",
+								"sigletransfertbyid",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sigletransfertbyref",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", () => {",
+									"    pm.response.to.have.status(201);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									"pm.test(\"Response has a data property\", () => {",
+									"    var jsonData = pm.response.json()",
+									"    pm.expect(jsonData.data).to.be.a('object')",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_res}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_res}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"reference\":\"REF-XLX-01-TR\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_res}}/ms-human-resources/api/sigletransfertbyref",
+							"host": [
+								"{{base_res}}"
+							],
+							"path": [
+								"ms-human-resources",
+								"api",
+								"sigletransfertbyref"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "multipletransfert",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", () => {",
+									"    pm.response.to.have.status(200);",
+									"})",
+									"",
+									"pm.test(\"Response should be json\", () => {",
+									"    pm.response.to.have.jsonBody",
+									"})",
+									"",
+									"pm.test(\"Response time is less than 5s\", () => {",
+									"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+									"}) ",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_res}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token_res}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_res}}/ms-human-resources/api/multipletransfert/31-05-2023/31-05-2023",
+							"host": [
+								"{{base_res}}"
+							],
+							"path": [
+								"ms-human-resources",
+								"api",
+								"multipletransfert",
+								"31-05-2023",
+								"31-05-2023"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.sendRequest({",
+					"    url: pm.environment.get(\"Auth_Url\"),",
+					"    method: 'POST',",
+					"    header: {",
+					"        'Content-Type': 'application/json'",
+					"    },",
+					"    body: {",
+					"        mode: 'application/json',",
+					"        raw: JSON.stringify( ",
+					"            {",
+					"                app_id: \"api-resourcehumaine\",",
+					"                password: \"hauiopqnxuy71074wn85\"",
+					"             })",
+					"        ",
+					"},",
+					"    function(err, res) {",
+					"        // Set token",
+					"        pm.environment.set(\"token_cour\", res.json().access_token)",
+					"    }",
+					"        ",
+					"});",
+					"                ",
+					"            ",
+					"",
+					"    "
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
