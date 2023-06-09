@@ -1,11 +1,15 @@
-name: Automated API tests using Postman CLI
+name: Automated postman test
 
 on: 
     schedule:
       - cron: "20 9 * * 1-5"
 
 jobs:
-  automated-api-tests:
+  build:
+    defaults:
+      run:
+        working-directory: ./.github/workflows/tests
+    name: automated-api-tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
