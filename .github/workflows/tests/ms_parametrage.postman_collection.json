@@ -1,0 +1,2979 @@
+{
+	"info": {
+		"_postman_id": "b15525f0-8da7-413a-be78-28df8909881b",
+		"name": "dgi_ms_parametrage",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27823724",
+		"_collection_link": "https://abyster-dgi.postman.co/workspace/DGI~7a86bdcb-b61b-4fad-82d7-dbfca5cc1703/collection/27823724-b15525f0-8da7-413a-be78-28df8909881b?action=share&creator=27823724&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "ms_parametrage_impot",
+			"item": [
+				{
+					"name": "nature impot",
+					"item": [
+						{
+							"name": "add_nature_impot",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(201);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											"pm.test(\"Response has a data property\", () => {",
+											"    pm.expect(pm.response.json.data).to.be.a('object')",
+											"})",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "fk_agent",
+											"value": "1",
+											"description": "int , id agent",
+											"type": "text"
+										},
+										{
+											"key": "intitule",
+											"value": "TVA2",
+											"description": "string , intitule de la nature d'impot",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "soumis au citoyens",
+											"description": "text , description de la nature d'impot",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_impot}}/api/nature_impot",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"nature_impot"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list_all_nature_impot",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(200);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "fk_agent",
+											"value": "1",
+											"description": "int , id agent",
+											"type": "text"
+										},
+										{
+											"key": "intitule",
+											"value": "TVA2",
+											"description": "string , intitule de la nature d'impot",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "soumis au citoyens",
+											"description": "text , description de la nature d'impot",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_impot}}/api/nature_impots",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"nature_impots"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list_one_nature_impot",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(200);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											"",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "fk_agent",
+											"value": "1",
+											"description": "int , id agent",
+											"type": "text"
+										},
+										{
+											"key": "intitule",
+											"value": "TVA2",
+											"description": "string , intitule de la nature d'impot",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "soumis au citoyens",
+											"description": "text , description de la nature d'impot",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_impot}}/api/nature_impots",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"nature_impots"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update_nature_impot",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(201);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											"pm.test(\"Response has a data property\", () => {",
+											"    pm.expect(pm.response.json.data).to.be.a('object')",
+											"})",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "fk_agent",
+											"value": "1",
+											"description": "int , id agent",
+											"type": "text"
+										},
+										{
+											"key": "intitule",
+											"value": "TVA2",
+											"description": "string , intitule de la nature d'impot",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "soumis au citoyens",
+											"description": "text , description de la nature d'impot",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_impot}}/api/nature_impot/1",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"nature_impot",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete_nature_impot",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(200);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) "
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "fk_agent",
+											"value": "1",
+											"description": "int , id agent",
+											"type": "text"
+										},
+										{
+											"key": "intitule",
+											"value": "TVA2",
+											"description": "string , intitule de la nature d'impot",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "soumis au citoyens",
+											"description": "text , description de la nature d'impot",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_impot}}/api/nature_impot/1",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"nature_impot",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "bareme de taux",
+					"item": [
+						{
+							"name": "add_bareme_taux",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(201);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											"pm.test(\"Response has a data property\", () => {",
+											"    pm.expect(pm.response.json.data).to.be.a('object')",
+											"})",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "{{token_par}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "fk_agent",
+											"value": "1",
+											"description": "int , id agent",
+											"type": "text"
+										},
+										{
+											"key": "fk_devise",
+											"value": "1",
+											"description": "int ,id devise",
+											"type": "text"
+										},
+										{
+											"key": "fk_nature_impot",
+											"value": "1",
+											"description": "int ,id nature impot",
+											"type": "text"
+										},
+										{
+											"key": "pourcentage_montant",
+											"value": "1",
+											"description": "int ,1 pour pourcentage , 2 pour montant",
+											"type": "text"
+										},
+										{
+											"key": "fixe_palier",
+											"value": "1",
+											"description": "int ,1 pour fixe, 2 pour palier",
+											"type": "text"
+										},
+										{
+											"key": "borne_inf",
+											"value": "0",
+											"description": "decimale, borne inferieur au cas ou c'est palier",
+											"type": "text"
+										},
+										{
+											"key": "borne_sup",
+											"value": "0",
+											"description": "decimale ,borne superieur au cas ou c'est palier",
+											"type": "text"
+										},
+										{
+											"key": "intitule",
+											"value": "bareme",
+											"description": "texte , intitule bareme",
+											"type": "text"
+										},
+										{
+											"key": "taux",
+											"value": "20",
+											"description": "decimal ,taux",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_impot}}/api/bareme_taux/1",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"bareme_taux",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list_all_bareme_taux",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(200);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "{{token_par}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url_impot}}/api/bareme_tauxes",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"bareme_tauxes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list_one_bareme_taux",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(200);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "{{token_par}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url_impot}}/api/bareme_tauxes",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"bareme_tauxes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update_bareme_taux",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(201);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											"pm.test(\"Response has a data property\", () => {",
+											"    pm.expect(pm.response.json.data).to.be.a('object')",
+											"})",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "{{token_par}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "fk_devise",
+											"value": "1",
+											"description": "int ,id devise",
+											"type": "text"
+										},
+										{
+											"key": "fk_nature_impot",
+											"value": "1",
+											"description": "int ,id nature impot",
+											"type": "text"
+										},
+										{
+											"key": "pourcentage_montant",
+											"value": "1",
+											"description": "int ,1 pour pourcentage , 2 pour montant",
+											"type": "text"
+										},
+										{
+											"key": "fixe_palier",
+											"value": "1",
+											"description": "int ,1 pour fixe, 2 pour palier",
+											"type": "text"
+										},
+										{
+											"key": "borne_inf",
+											"value": "0",
+											"description": "decimale, borne inferieur au cas ou c'est palier",
+											"type": "text"
+										},
+										{
+											"key": "borne_sup",
+											"value": "0",
+											"description": "decimale ,borne superieur au cas ou c'est palier",
+											"type": "text"
+										},
+										{
+											"key": "intitule",
+											"value": "bareme",
+											"description": "texte , intitule bareme",
+											"type": "text"
+										},
+										{
+											"key": "taux",
+											"value": "20",
+											"description": "decimal ,taux",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_impot}}/api/bareme_taux/1",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"bareme_taux",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete_bareme_taux",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(200);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "{{token_par}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url_impot}}/api/bareme_taux/1",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"bareme_taux",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "devise",
+					"item": [
+						{
+							"name": "add_devise",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(201);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											"pm.test(\"Response has a data property\", () => {",
+											"    pm.expect(pm.response.json.data).to.be.a('object')",
+											"})",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "{{token_par}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "fk_agent",
+											"value": "1",
+											"description": "int , id agent",
+											"type": "default"
+										},
+										{
+											"key": "intitule",
+											"value": "dollars américains",
+											"description": "string , intitule devise",
+											"type": "default"
+										},
+										{
+											"key": "code",
+											"value": "USD2",
+											"description": "string , code international de la devise",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_impot}}/api/devise",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"devise"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list_all_devise",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(200);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) "
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "{{token_par}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url_impot}}/api/devise",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"devise"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list_one_devise",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(200);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "{{token_par}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url_impot}}/api/devise/1",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"devise",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update_devise",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(201);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											"pm.test(\"Response has a data property\", () => {",
+											"    pm.expect(pm.response.json.data).to.be.a('object')",
+											"})",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "{{token_par}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "intitule",
+											"value": "dollars américains",
+											"description": "string , intitule devise",
+											"type": "default"
+										},
+										{
+											"key": "code",
+											"value": "USD2",
+											"description": "string , code international de la devise",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_impot}}/api/devise/1",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"devise",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete_devise",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(200);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "{{token_par}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url_impot}}/api/devise/1",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"devise",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "acte generateur",
+					"item": [
+						{
+							"name": "add_acte_generateur",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(201);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											"pm.test(\"Response has a data property\", () => {",
+											"    pm.expect(pm.response.json.data).to.be.a('object')",
+											"})",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "{{token_par}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "intitule",
+											"value": "TVA0",
+											"description": "string , intitulé de l'acte generateur ",
+											"type": "default"
+										},
+										{
+											"key": "fk_agent",
+											"value": "1",
+											"description": "int , id agent ",
+											"type": "default"
+										},
+										{
+											"key": "fk_echeance",
+											"value": "2",
+											"description": "int , id echéance",
+											"type": "default"
+										},
+										{
+											"key": "fk_nature_impot",
+											"value": "1",
+											"description": "int , id nature d'impot",
+											"type": "default"
+										},
+										{
+											"key": "description",
+											"value": "impot tva normal",
+											"description": "text , description de l'acte generateur",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_impot}}/api/actes_generateur",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"actes_generateur"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list_all_acte_generateur",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(200);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "{{token_par}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url_impot}}/api/actes_generateurs",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"actes_generateurs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list_one_acte_generateur",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(200);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "{{token_par}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url_impot}}/api/actes_generateur/1",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"actes_generateur",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update_acte_generateur",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(201);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											"pm.test(\"Response has a data property\", () => {",
+											"    pm.expect(pm.response.json.data).to.be.a('object')",
+											"})",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "{{token_par}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "intitule",
+											"value": "TVA0",
+											"description": "string , intitulé de l'acte generateur ",
+											"type": "default"
+										},
+										{
+											"key": "fk_echeance",
+											"value": "2",
+											"description": "int , id echéance",
+											"type": "default"
+										},
+										{
+											"key": "fk_nature_impot",
+											"value": "1",
+											"description": "int , id nature d'impot",
+											"type": "default"
+										},
+										{
+											"key": "description",
+											"value": "impot tva normal",
+											"description": "text , description de l'acte generateur",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_impot}}/api/actes_generateur",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"actes_generateur"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete_acte_generateur",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(200);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "{{token_par}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url_impot}}/api/actes_generateur/1",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"actes_generateur",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "acte / bareme",
+					"item": [
+						{
+							"name": "add_acte_bareme",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(201);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											"pm.test(\"Response has a data property\", () => {",
+											"    pm.expect(pm.response.json.data).to.be.a('object')",
+											"})",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "{{token_par}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"fk_acte_generateur\": 1,\n   \"fk_bareme_taux\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_impot}}/api/actes_baremes",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"actes_baremes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list_all_acte_bareme",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(200);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "{{token_par}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url_impot}}/api/actes_baremes",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"actes_baremes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list_one_acte_bareme",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(200);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_impot}}/api/actes_bareme/1",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"actes_bareme",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update_acte_bareme",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(201);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											"pm.test(\"Response has a data property\", () => {",
+											"    pm.expect(pm.response.json.data).to.be.a('object')",
+											"})",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "fk_acte_generateur",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "fk_bareme_taux",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_impot}}/api/actes_bareme",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"actes_bareme"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete_acte_bareme",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(200);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url_impot}}/api/actes_bareme/1",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"actes_bareme",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "echeance",
+					"item": [
+						{
+							"name": "add_echeance",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(201);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											"pm.test(\"Response has a data property\", () => {",
+											"    pm.expect(pm.response.json.data).to.be.a('object')",
+											"})",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "fk_agent",
+											"value": "1",
+											"type": "default"
+										},
+										{
+											"key": "periodicite",
+											"value": "mensuel",
+											"type": "default"
+										},
+										{
+											"key": "jour",
+											"value": "5",
+											"type": "default"
+										},
+										{
+											"key": "mois",
+											"value": "0",
+											"type": "default"
+										},
+										{
+											"key": "intitule",
+											"value": "echéance tva",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_impot}}/api/echeance",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"echeance"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list_all_echeance",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(200);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "echeance",
+											"value": "all",
+											"type": "default",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_impot}}/api/echeances",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"echeances"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list_one_echeance",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(200);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "echeance",
+											"value": "all",
+											"type": "default",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_impot}}/api/echeances",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"echeances"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update_echeance",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(201);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											"pm.test(\"Response has a data property\", () => {",
+											"    pm.expect(pm.response.json.data).to.be.a('object')",
+											"})",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "fk_agent",
+											"value": "1",
+											"type": "default"
+										},
+										{
+											"key": "periodicite",
+											"value": "annuel",
+											"type": "default"
+										},
+										{
+											"key": "jour",
+											"value": "5",
+											"type": "default"
+										},
+										{
+											"key": "mois",
+											"value": "12",
+											"type": "default"
+										},
+										{
+											"key": "intitule",
+											"value": "echeance tva new",
+											"type": "default"
+										},
+										{
+											"key": "etat",
+											"value": "1",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_impot}}/api/echeance",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"echeance"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete_echeance",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(200);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "fk_agent",
+											"value": "1",
+											"type": "default"
+										},
+										{
+											"key": "periodicite",
+											"value": "annuel",
+											"type": "default"
+										},
+										{
+											"key": "jour",
+											"value": "5",
+											"type": "default"
+										},
+										{
+											"key": "mois",
+											"value": "12",
+											"type": "default"
+										},
+										{
+											"key": "intitule",
+											"value": "echeance tva new",
+											"type": "default"
+										},
+										{
+											"key": "etat",
+											"value": "1",
+											"type": "default",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_impot}}/api/echeance/1",
+									"host": [
+										"{{url_impot}}"
+									],
+									"path": [
+										"api",
+										"echeance",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ms_parametrage_application",
+			"item": [
+				{
+					"name": "taux de change",
+					"item": [
+						{
+							"name": "add_taux_change",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(201);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											"pm.test(\"Response has a data property\", () => {",
+											"    pm.expect(pm.response.json.data).to.be.a('object')",
+											"})",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "fk_agent",
+											"value": "1",
+											"description": "int , id agent",
+											"type": "default"
+										},
+										{
+											"key": "fk_devise1",
+											"value": "1",
+											"description": "int , id devise 1",
+											"type": "default"
+										},
+										{
+											"key": "fk_devise2",
+											"value": "1",
+											"description": "int , id devise 2",
+											"type": "default"
+										},
+										{
+											"key": "taux",
+											"value": "10",
+											"description": "decimale , taux ( devise1 = devise2 x taux)",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_appli}}/api/taux_change",
+									"host": [
+										"{{url_appli}}"
+									],
+									"path": [
+										"api",
+										"taux_change"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list_all_taux_change",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(200);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url_appli}}/api/taux_changes",
+									"host": [
+										"{{url_appli}}"
+									],
+									"path": [
+										"api",
+										"taux_changes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list_one_taux_change",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(200);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "echeance",
+											"value": "all",
+											"type": "default",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_appli}}/api/taux_change/1",
+									"host": [
+										"{{url_appli}}"
+									],
+									"path": [
+										"api",
+										"taux_change",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update_taux_change",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(201);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											"pm.test(\"Response has a data property\", () => {",
+											"    pm.expect(pm.response.json.data).to.be.a('object')",
+											"})",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"fk_agent\": 1,\n    \"fk_devise1\": 2,\n    \"fk_devise2\": 1,\n    \"taux\": 20\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_appli}}/api/taux_change/1",
+									"host": [
+										"{{url_appli}}"
+									],
+									"path": [
+										"api",
+										"taux_change",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete_taux_change",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(200);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											"pm.test(\"Response has a data property\", () => {",
+											"    pm.expect(pm.response.json.data).to.be.a('object')",
+											"})",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url_appli}}/api/taux_change/1",
+									"host": [
+										"{{url_appli}}"
+									],
+									"path": [
+										"api",
+										"taux_change",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "jours feriés",
+					"item": [
+						{
+							"name": "add_jour",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(201);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											"pm.test(\"Response has a data property\", () => {",
+											"    pm.expect(pm.response.json.data).to.be.a('object')",
+											"})",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "fk_agent",
+											"value": "1",
+											"description": "int , id agent",
+											"type": "default"
+										},
+										{
+											"key": "fk_devise1",
+											"value": "1",
+											"description": "int , id devise 1",
+											"type": "default"
+										},
+										{
+											"key": "fk_devise2",
+											"value": "1",
+											"description": "int , id devise 2",
+											"type": "default"
+										},
+										{
+											"key": "taux",
+											"value": "10",
+											"description": "decimale , taux ( devise1 = devise2 x taux)",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_appli}}/api/taux_change",
+									"host": [
+										"{{url_appli}}"
+									],
+									"path": [
+										"api",
+										"taux_change"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list_all_jour",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(200);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url_appli}}/api/taux_changes",
+									"host": [
+										"{{url_appli}}"
+									],
+									"path": [
+										"api",
+										"taux_changes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list_one_jour",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(200);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "echeance",
+											"value": "all",
+											"type": "default",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_appli}}/api/taux_change/1",
+									"host": [
+										"{{url_appli}}"
+									],
+									"path": [
+										"api",
+										"taux_change",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update_jour",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(201);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											"pm.test(\"Response has a data property\", () => {",
+											"    pm.expect(pm.response.json.data).to.be.a('object')",
+											"})",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"fk_agent\": 1,\n    \"fk_devise1\": 2,\n    \"fk_devise2\": 3,\n    \"taux\": 40\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_appli}}/api/taux_change/1",
+									"host": [
+										"{{url_appli}}"
+									],
+									"path": [
+										"api",
+										"taux_change",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete_jour",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code\", () => {",
+											"    pm.response.to.have.status(200);",
+											"})",
+											"",
+											"pm.test(\"Response should be json\", () => {",
+											"    pm.response.to.have.jsonBody",
+											"})",
+											"",
+											"pm.test(\"Response time is less than 5s\", () => {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"}) ",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_par}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url_appli}}/api/taux_change/1",
+									"host": [
+										"{{url_appli}}"
+									],
+									"path": [
+										"api",
+										"taux_change",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.sendRequest({",
+					"    url: pm.environment.get(\"Auth_Url\"),",
+					"    method: 'POST',",
+					"    header: {",
+					"        'Content-Type': 'application/json'",
+					"    },",
+					"    body: {",
+					"        mode: 'application/json',",
+					"        raw: JSON.stringify( ",
+					"            {",
+					"                app_id: \"frontend\",",
+					"                password: \"swauuye820nsaiu\"",
+					"             })",
+					"        ",
+					"},",
+					"    function(err, res) {",
+					"        // Set token",
+					"        pm.environment.set(\"token_par\", res.json().access_token)",
+					"    }",
+					"        ",
+					"});",
+					"                ",
+					"            ",
+					"",
+					"    "
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

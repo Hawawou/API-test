@@ -1,8 +1,8 @@
-name: Automated postman test
+name: Automated postman tests
 
 on: 
     schedule:
-      - cron: "20 9 * * 1-5"
+      - cron: "05 12 * * 1-5"
 
 jobs:
   build:
@@ -13,11 +13,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Install Postman CLI
-        run: |
-          curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
-      - name: Login to Postman CLI
-        run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
-      - name: Run API tests
-        run: |
-           postman collection run "27823724-b15525f0-8da7-413a-be78-28df8909881b" -e "27823724-574196f4-25a7-477c-8cc1-63cf1e497888"
+      - name: Create directory for reports 
+        run: mkdir Reports 
+
+      - name: Install node
+        uses: actions/checkout@v3
+        with:
+          node-version: '16.x'
+
+      - name: Install Newmann
+        run: 
+          echo "Installing Newmann"
+          npm install newman -g
+          npm install newman reporter
+
+      - name: Run collection
+        run: 
+          newman run ms_parametrage.postman_collection.json -e environment.postman_collection.json --reporters cli,json --reporter-json-export outputfile.json
+
+      - name: Send reports to folder
+        uses: actions/upload-artifact@v2
+        with: 
+          name: Report
+          path: Reports
+
+      # - name: Send email with report
+      #   uses: dawidd6/action-send-mail@v3
+        
+      
