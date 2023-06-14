@@ -2,7 +2,7 @@ name: Automated postman tests
 
 on: 
     schedule:
-      - cron: "05 12 * * 1-5"
+      - cron: "30 10 * * 1-5"
 
 jobs:
   build:
@@ -41,11 +41,12 @@ jobs:
         with: 
           server_address: smtp.gmail.com
           server_port: 465
-          username: apikey
-          password: ${{ secrets.EMAIL_API_KEY }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
           subject: "API testing report"
+          body: "Find attached to this mail the report of execting the tests of dgi microservices"
           recipients: 'hawawou.oumarou@abyster.com'
           attachment: 'Reports/report.html'
-
+          from: Me
         
       
